@@ -1,0 +1,93 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:is(.dark *));
+
+@layer base {
+  :root {
+    --color-primary: #bc000a;
+    --color-primary-container: #e2241f;
+    --color-outline: #926f6a;
+    --color-outline-variant: #e7bdb7;
+    
+    /* Light Mode Variables */
+    --color-background: #f9f9fb;
+    --color-on-background: #1a1c1d;
+    --color-surface: #ffffff;
+    --color-on-surface: #1a1c1d;
+    --color-surface-container-lowest: #ffffff;
+    --color-surface-container-low: #f3f3f5;
+    --color-surface-container: #eeeef0;
+    --color-surface-container-high: #e8e8ea;
+    --color-surface-container-highest: #e2e2e4;
+    --color-surface-dim: #d9dadc;
+    --color-secondary: #5f5e5e;
+  }
+
+  .dark {
+    /* Dark Mode Variables */
+    --color-background: #0d0d0f;
+    --color-on-background: #ffffff;
+    --color-surface: #1a1a1c;
+    --color-on-surface: #f9f9fb;
+    --color-surface-container-lowest: #121214;
+    --color-surface-container-low: #1e1e20;
+    --color-surface-container: #262628;
+    --color-surface-container-high: #2d2d30;
+    --color-surface-container-highest: #333336;
+    --color-surface-dim: #151517;
+    --color-secondary: #9ca3af;
+  }
+}
+
+@theme {
+  --color-primary: var(--color-primary);
+  --color-primary-container: var(--color-primary-container);
+  --color-outline: var(--color-outline);
+  --color-outline-variant: var(--color-outline-variant);
+
+  --color-background: var(--color-background);
+  --color-on-background: var(--color-on-background);
+  --color-surface: var(--color-surface);
+  --color-on-surface: var(--color-on-surface);
+  --color-surface-container-lowest: var(--color-surface-container-lowest);
+  --color-surface-container-low: var(--color-surface-container-low);
+  --color-surface-container: var(--color-surface-container);
+  --color-surface-container-high: var(--color-surface-container-high);
+  --color-surface-container-highest: var(--color-surface-container-highest);
+  --color-surface-dim: var(--color-surface-dim);
+  --color-secondary: var(--color-secondary);
+
+  --font-sans: var(--font-jakarta), "Plus Jakarta Sans", ui-sans-serif, system-ui;
+  --font-body: var(--font-jakarta), "Plus Jakarta Sans", ui-sans-serif, system-ui;
+  --font-headline: var(--font-jakarta), "Plus Jakarta Sans", ui-sans-serif, system-ui;
+}
+
+/* Material Symbols Outlined Font Configuration */
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+}
+
+.glass-panel {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+.dark .glass-panel {
+  background: rgba(30, 30, 32, 0.7);
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-on-background);
+}

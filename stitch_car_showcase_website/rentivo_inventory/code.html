@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>RENTIVO - Premium Car Inventory</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-primary": "#ffb4aa",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-fixed": "#001f29",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "surface-container-highest": "#e2e2e4",
+                        "on-primary": "#ffffff",
+                        "surface-bright": "#f9f9fb",
+                        "primary-container": "#e2241f",
+                        "primary-fixed": "#ffdad5",
+                        "inverse-on-surface": "#f0f0f2",
+                        "on-surface-variant": "#5d3f3b",
+                        "on-secondary-fixed-variant": "#474646",
+                        "outline": "#926f6a",
+                        "on-surface": "#1a1c1d",
+                        "on-tertiary-container": "#fafdff",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "surface-dim": "#d9dadc",
+                        "tertiary-fixed-dim": "#68d3fc",
+                        "on-secondary-container": "#656464",
+                        "on-primary-fixed": "#410001",
+                        "inverse-surface": "#2f3132",
+                        "surface": "#f9f9fb",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-container": "#e5e2e1",
+                        "secondary": "#5f5e5e",
+                        "on-tertiary": "#ffffff",
+                        "secondary-fixed": "#e5e2e1",
+                        "error": "#ba1a1a",
+                        "on-background": "#1a1c1d",
+                        "on-secondary": "#ffffff",
+                        "surface-container-high": "#e8e8ea",
+                        "tertiary-fixed": "#bbe9ff",
+                        "on-tertiary-fixed-variant": "#004d63",
+                        "on-primary-fixed-variant": "#930005",
+                        "surface-variant": "#e2e2e4",
+                        "surface-tint": "#c0000a",
+                        "surface-container": "#eeeef0",
+                        "primary-fixed-dim": "#ffb4aa",
+                        "on-primary-container": "#fffbff",
+                        "tertiary": "#00647f",
+                        "primary": "#bc000a",
+                        "outline-variant": "#e7bdb7",
+                        "on-error": "#ffffff",
+                        "background": "#f9f9fb",
+                        "tertiary-container": "#007fa0",
+                        "surface-container-low": "#f3f3f5",
+                        "on-error-container": "#93000a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Plus Jakarta Sans"],
+                        "label": ["Plus Jakarta Sans"]
+                    }
+                },
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+    </style>
+</head>
+<body class="bg-background font-body text-on-surface">
+<!-- Top Navigation Bar -->
+<nav class="fixed top-0 w-full z-50 bg-[#f9f9fb] dark:bg-gray-900 bg-opacity-90 backdrop-blur-xl shadow-sm dark:shadow-none">
+<div class="flex justify-between items-center px-8 py-4 max-w-full mx-auto">
+<div class="text-2xl font-black text-[#1a1c1d] dark:text-white tracking-tighter">RENTIVO</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-[#5f5e5e] dark:text-gray-400 font-medium hover:text-[#bc000a] transition-transform duration-200 hover:scale-105" href="#">Home</a>
+<a class="text-[#5f5e5e] dark:text-gray-400 font-medium hover:text-[#bc000a] transition-transform duration-200 hover:scale-105" href="#">Page</a>
+<a class="text-[#bc000a] dark:text-red-500 border-b-2 border-[#bc000a] pb-1 font-bold" href="#">Inventory</a>
+<a class="text-[#5f5e5e] dark:text-gray-400 font-medium hover:text-[#bc000a] transition-transform duration-200 hover:scale-105" href="#">Shortcodes</a>
+<a class="text-[#5f5e5e] dark:text-gray-400 font-medium hover:text-[#bc000a] transition-transform duration-200 hover:scale-105" href="#">Blog</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="hidden lg:flex items-center gap-2 text-on-surface font-medium px-4 py-2 rounded-xl transition-all scale-95 active:scale-100">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+                    Cart Details
+                </button>
+<button class="bg-primary text-white font-bold px-6 py-2.5 rounded-xl transition-all scale-95 active:scale-100 shadow-lg shadow-primary/20">
+                    Add Car
+                </button>
+</div>
+</div>
+</nav>
+<main class="pt-24 pb-20 px-8 max-w-[1600px] mx-auto">
+<!-- Editorial Header -->
+<header class="mb-16">
+<h1 class="text-5xl md:text-7xl font-bold tracking-tight mb-4">Precision <span class="text-primary">Inventory.</span></h1>
+<p class="text-secondary max-w-2xl text-lg leading-relaxed">Experience the pinnacle of automotive engineering. From high-performance supercars to sustainable luxury, our fleet is curated for those who demand excellence on every mile.</p>
+</header>
+<div class="flex flex-col lg:flex-row gap-12">
+<!-- Filter Sidebar -->
+<aside class="w-full lg:w-80 shrink-0">
+<div class="sticky top-32 space-y-10">
+<div>
+<h3 class="text-xs font-black uppercase tracking-widest text-primary mb-6">Location</h3>
+<div class="relative">
+<input class="w-full bg-surface-container-low border-none rounded-lg py-4 px-5 focus:ring-1 focus:ring-primary/20 transition-all text-on-surface" placeholder="Search city..." type="text"/>
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-secondary" data-icon="location_on">location_on</span>
+</div>
+</div>
+<div>
+<h3 class="text-xs font-black uppercase tracking-widest text-primary mb-6">Car Categories</h3>
+<div class="space-y-3">
+<label class="flex items-center justify-between group cursor-pointer">
+<span class="text-on-surface font-medium group-hover:text-primary transition-colors">Hypercars</span>
+<input checked="" class="rounded border-secondary/30 text-primary focus:ring-primary h-5 w-5" type="checkbox"/>
+</label>
+<label class="flex items-center justify-between group cursor-pointer">
+<span class="text-on-surface font-medium group-hover:text-primary transition-colors">Luxury Sedans</span>
+<input class="rounded border-secondary/30 text-primary focus:ring-primary h-5 w-5" type="checkbox"/>
+</label>
+<label class="flex items-center justify-between group cursor-pointer">
+<span class="text-on-surface font-medium group-hover:text-primary transition-colors">Electric Performance</span>
+<input class="rounded border-secondary/30 text-primary focus:ring-primary h-5 w-5" type="checkbox"/>
+</label>
+<label class="flex items-center justify-between group cursor-pointer">
+<span class="text-on-surface font-medium group-hover:text-primary transition-colors">Premium SUVs</span>
+<input class="rounded border-secondary/30 text-primary focus:ring-primary h-5 w-5" type="checkbox"/>
+</label>
+</div>
+</div>
+<div>
+<h3 class="text-xs font-black uppercase tracking-widest text-primary mb-6">Price Range</h3>
+<input class="w-full accent-primary h-1.5 bg-surface-container-highest rounded-full appearance-none cursor-pointer" type="range"/>
+<div class="flex justify-between mt-4 text-sm font-bold text-secondary">
+<span>$250</span>
+<span>$5,000+</span>
+</div>
+</div>
+<button class="w-full py-4 bg-surface-container-highest text-on-surface font-bold rounded-xl transition-all hover:scale-[1.02] active:scale-100">
+                        Reset Filters
+                    </button>
+</div>
+</aside>
+<!-- Inventory Grid -->
+<section class="flex-grow">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-16">
+<!-- Car Card 1: Lamborghini -->
+<div class="group relative">
+<div class="relative aspect-[16/10] overflow-hidden rounded-xl bg-surface-container-low mb-6">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Sleek black Lamborghini Huracan parked in a modern minimalist studio with dramatic spotlighting and sharp reflections" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbsY2tWJ8Vv7Uwxp4zbBDPnOTcRf0MVjrSy7uumYtnPHHGE0G3uzF2fAsfvqefA3HYH3y0Dv43tMrP5lkZ9MUFWsVdNvke0UAXxIWIjJKBZ5Bbef3_FBZlzVJFU2Kg5KwxB-D2Dj0Q8Bek5azlubGb3NqAxJhnsylBzdcOwa6ZqAwj0hwtvjVYue6mkvuab05hhl3Eg7na0PiZE__NzVXfXOQgMQ0tI0ltFGwRRlF62S0KqC2YtbyRZnrv0HKdx8fOiSCsSx4E1q6g"/>
+<div class="absolute top-4 left-4 glass-panel px-4 py-2 rounded-lg">
+<span class="text-xs font-black uppercase tracking-tighter text-on-surface">Available Now</span>
+</div>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h2 class="text-2xl font-bold mb-1">Lamborghini Huracán EVO</h2>
+<div class="flex gap-4 text-secondary text-sm mb-6">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-xs" data-icon="settings">settings</span>
+                                        Automatic
+                                    </div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-xs" data-icon="local_gas_station">local_gas_station</span>
+                                        Petrol
+                                    </div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-xs" data-icon="person">person</span>
+                                        2 Seats
+                                    </div>
+</div>
+</div>
+<div class="text-right">
+<span class="text-sm text-secondary block">Per day</span>
+<span class="text-2xl font-black text-primary">$1,250</span>
+</div>
+</div>
+<button class="w-full py-4 bg-primary text-white font-bold rounded-xl flex items-center justify-center gap-2 group-hover:bg-primary-container transition-all shadow-lg shadow-primary/20 hover:scale-[1.02]">
+                            Book Now
+                            <span class="material-symbols-outlined text-lg" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+<!-- Car Card 2: Tesla -->
+<div class="group relative">
+<div class="relative aspect-[16/10] overflow-hidden rounded-xl bg-surface-container-low mb-6">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Pure white Tesla Model S Plaid in a high-tech showroom with neon light accents and a futuristic atmosphere" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZit5sMrZabyQ4MmnVi72cv34r46raIqp8SR1qAFnfdnnKkcrxCoIGwOmRmdvTOr7AfkpLdDlYyyC6BzP_Cz25reJHfpYuq9DGle-AncIWat8BCNPAgo9VkS_FmwwrcrV2YF1f9s8LM93thSZS5MX5zxh6Nj4_1f-UxCqJ0cKUh7pwoOF2HVA31M2EFl_rldxvpcWH75gF6BAl_kqpO_oEj0hlWEqGDfgdz-5tD3qN5CrlcgNQi1kWQqBQ2NnhaKVHFUXLvVvxc6Jt"/>
+<div class="absolute top-4 left-4 glass-panel px-4 py-2 rounded-lg">
+<span class="text-xs font-black uppercase tracking-tighter text-on-surface">Electric Choice</span>
+</div>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h2 class="text-2xl font-bold mb-1">Tesla Model S Plaid</h2>
+<div class="flex gap-4 text-secondary text-sm mb-6">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-xs" data-icon="bolt">bolt</span>
+                                        Electric
+                                    </div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-xs" data-icon="speed">speed</span>
+                                        1020hp
+                                    </div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-xs" data-icon="group">group</span>
+                                        5 Seats
+                                    </div>
+</div>
+</div>
+<div class="text-right">
+<span class="text-sm text-secondary block">Per day</span>
+<span class="text-2xl font-black text-primary">$450</span>
+</div>
+</div>
+<button class="w-full py-4 bg-primary text-white font-bold rounded-xl flex items-center justify-center gap-2 group-hover:bg-primary-container transition-all shadow-lg shadow-primary/20 hover:scale-[1.02]">
+                            Book Now
+                            <span class="material-symbols-outlined text-lg" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+<!-- Car Card 3: Porsche -->
+<div class="group relative">
+<div class="relative aspect-[16/10] overflow-hidden rounded-xl bg-surface-container-low mb-6">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Classic silver Porsche 911 driving through a winding coastal road at sunset with golden light hitting the chassis" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCADN3Shnf-5Bbb0yj-pAVVBcHSATfUKrR9f6vjMFfz1jtIubJyjw5ESmD6ZbBA04VBbeJUk_l3XvOqtTeJwSBmEkTOrBXoGEICHi2FZyoQyacrpgyGAOMFnpu4IeWl0IJvXw1EY1SmEJx-5_iv8sQvvCvLxUgVUVZSN6QI8Jueogh5PHKR8_AN2C7HQYTNnYSAX0V4F4-FBV0GkiQDM-_tUW6dDPx3P1Th3H5tyohQmw4u45LxUEh7hYgv40NNSoI7PMZYuXm7lzu6"/>
+<div class="absolute top-4 right-4 bg-primary text-white text-[10px] font-black uppercase px-2 py-1 rounded">Popular</div>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h2 class="text-2xl font-bold mb-1">Porsche 911 GT3 RS</h2>
+<div class="flex gap-4 text-secondary text-sm mb-6">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-xs" data-icon="auto_transmission">auto_transmission</span>
+                                        PDK
+                                    </div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-xs" data-icon="local_gas_station">local_gas_station</span>
+                                        Petrol
+                                    </div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-xs" data-icon="person">person</span>
+                                        2 Seats
+                                    </div>
+</div>
+</div>
+<div class="text-right">
+<span class="text-sm text-secondary block">Per day</span>
+<span class="text-2xl font-black text-primary">$890</span>
+</div>
+</div>
+<button class="w-full py-4 bg-primary text-white font-bold rounded-xl flex items-center justify-center gap-2 group-hover:bg-primary-container transition-all shadow-lg shadow-primary/20 hover:scale-[1.02]">
+                            Book Now
+                            <span class="material-symbols-outlined text-lg" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+<!-- Car Card 4: Range Rover -->
+<div class="group relative">
+<div class="relative aspect-[16/10] overflow-hidden rounded-xl bg-surface-container-low mb-6">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Matte charcoal Range Rover Sport in a snowy mountain landscape with misty background and rugged terrain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0CeAFp5kPX5dkImCG2kM3epjxGKcYm_nJLbacZT6WdwidHrUN-pXvyczQ_4pDwx55OIt9OQ5ubFYG7KWdeeDgYBE9luiEe_BMQuisLromZjq8R61EnL17PEon_zyWrXihlKq3cGT5CZd7dJLuRjDZSc78WnPGBQeu_OTc7dlkUC-PHYL_lU4r_qWGpXZxO2ft70-CcNPB9no3lglaWtIfT6YhJQbvrfvR75zSC_l7aLWQest3TkDnYGVtA4m7NJvyeIhVhK0CGmVF"/>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h2 class="text-2xl font-bold mb-1">Range Rover Autobiography</h2>
+<div class="flex gap-4 text-secondary text-sm mb-6">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-xs" data-icon="settings">settings</span>
+                                        Automatic
+                                    </div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-xs" data-icon="local_gas_station">local_gas_station</span>
+                                        Diesel
+                                    </div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-xs" data-icon="group">group</span>
+                                        7 Seats
+                                    </div>
+</div>
+</div>
+<div class="text-right">
+<span class="text-sm text-secondary block">Per day</span>
+<span class="text-2xl font-black text-primary">$650</span>
+</div>
+</div>
+<button class="w-full py-4 bg-primary text-white font-bold rounded-xl flex items-center justify-center gap-2 group-hover:bg-primary-container transition-all shadow-lg shadow-primary/20 hover:scale-[1.02]">
+                            Book Now
+                            <span class="material-symbols-outlined text-lg" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Pagination -->
+<div class="mt-20 flex justify-center gap-3">
+<button class="w-12 h-12 flex items-center justify-center rounded-xl bg-surface-container-high text-on-surface font-bold">1</button>
+<button class="w-12 h-12 flex items-center justify-center rounded-xl bg-surface-container-low text-on-surface font-bold hover:bg-surface-container-high transition-colors">2</button>
+<button class="w-12 h-12 flex items-center justify-center rounded-xl bg-surface-container-low text-on-surface font-bold hover:bg-surface-container-high transition-colors">3</button>
+<button class="w-12 h-12 flex items-center justify-center rounded-xl bg-surface-container-low text-on-surface font-bold hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</section>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-[#f9f9fb] dark:bg-gray-950 w-full border-t border-gray-200 dark:border-gray-800">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-12 py-16 w-full">
+<div class="space-y-6">
+<div class="text-xl font-black text-[#1a1c1d] dark:text-white">RENTIVO</div>
+<p class="text-[#5f5e5e] dark:text-gray-500 font-['Plus_Jakarta_Sans'] leading-relaxed">Redefining luxury car rentals through precision and passion.</p>
+</div>
+<div class="space-y-4">
+<h4 class="font-bold text-on-surface">About</h4>
+<div class="flex flex-col gap-2">
+<a class="text-[#5f5e5e] dark:text-gray-500 hover:text-[#bc000a] transition-colors" href="#">Company</a>
+<a class="text-[#5f5e5e] dark:text-gray-500 hover:text-[#bc000a] transition-colors" href="#">Partners</a>
+<a class="text-[#5f5e5e] dark:text-gray-500 hover:text-[#bc000a] transition-colors" href="#">Careers</a>
+</div>
+</div>
+<div class="space-y-4">
+<h4 class="font-bold text-on-surface">Vehicles Info</h4>
+<div class="flex flex-col gap-2">
+<a class="text-[#5f5e5e] dark:text-gray-500 hover:text-[#bc000a] transition-colors" href="#">Maintenance</a>
+<a class="text-[#5f5e5e] dark:text-gray-500 hover:text-[#bc000a] transition-colors" href="#">Insurance</a>
+<a class="text-[#5f5e5e] dark:text-gray-500 hover:text-[#bc000a] transition-colors" href="#">Coverage</a>
+</div>
+</div>
+<div class="space-y-4">
+<h4 class="font-bold text-on-surface">App Download</h4>
+<div class="flex flex-col gap-4">
+<div class="bg-on-surface text-surface py-3 px-4 rounded-xl flex items-center gap-3 cursor-pointer hover:bg-on-surface/90 transition-all">
+<span class="material-symbols-outlined text-3xl" data-icon="phone_iphone">phone_iphone</span>
+<div>
+<div class="text-[10px] uppercase font-bold opacity-60">Download on</div>
+<div class="text-sm font-bold">App Store</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="px-12 py-8 border-t border-gray-100 dark:border-gray-800 text-center">
+<p class="text-[#5f5e5e] dark:text-gray-500 text-sm">© 2024 Rentivo. All rights reserved. Precision Engineering.</p>
+</div>
+</footer>
+</body></html>

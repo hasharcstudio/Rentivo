@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Preferences | Veloce Elite</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-container": "#007fa0",
+                    "primary-container": "#e2241f",
+                    "on-background": "#1a1c1d",
+                    "surface": "#f9f9fb",
+                    "primary-fixed": "#ffdad5",
+                    "secondary": "#5f5e5e",
+                    "surface-container-low": "#f3f3f5",
+                    "surface-bright": "#f9f9fb",
+                    "outline": "#926f6a",
+                    "on-secondary": "#ffffff",
+                    "on-secondary-fixed-variant": "#474646",
+                    "primary": "#bc000a",
+                    "tertiary": "#00647f",
+                    "on-error-container": "#93000a",
+                    "on-primary-fixed-variant": "#930005",
+                    "surface-tint": "#c0000a",
+                    "surface-variant": "#e2e2e4",
+                    "on-tertiary": "#ffffff",
+                    "inverse-on-surface": "#f0f0f2",
+                    "tertiary-fixed": "#bbe9ff",
+                    "tertiary-fixed-dim": "#68d3fc",
+                    "on-primary-container": "#fffbff",
+                    "primary-fixed-dim": "#ffb4aa",
+                    "surface-container-high": "#e8e8ea",
+                    "on-surface": "#1a1c1d",
+                    "on-error": "#ffffff",
+                    "surface-container-lowest": "#ffffff",
+                    "inverse-primary": "#ffb4aa",
+                    "on-tertiary-container": "#fafdff",
+                    "secondary-fixed-dim": "#c8c6c5",
+                    "on-tertiary-fixed": "#001f29",
+                    "error-container": "#ffdad6",
+                    "surface-dim": "#d9dadc",
+                    "surface-container": "#eeeef0",
+                    "surface-container-highest": "#e2e2e4",
+                    "outline-variant": "#e7bdb7",
+                    "inverse-surface": "#2f3132",
+                    "secondary-fixed": "#e5e2e1",
+                    "on-tertiary-fixed-variant": "#004d63",
+                    "on-secondary-fixed": "#1c1b1b",
+                    "on-primary-fixed": "#410001",
+                    "secondary-container": "#e5e2e1",
+                    "on-secondary-container": "#656464",
+                    "on-surface-variant": "#5d3f3b",
+                    "background": "#f9f9fb",
+                    "error": "#ba1a1a",
+                    "on-primary": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Plus Jakarta Sans"],
+                    "body": ["Plus Jakarta Sans"],
+                    "label": ["Plus Jakarta Sans"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .spec-hud {
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+        .spec-hud::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background antialiased">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-[#f9f9fb] dark:bg-[#1a1c1d] flex justify-between items-center px-8 py-4 w-full max-w-full">
+<div class="text-2xl font-black italic tracking-tighter text-[#1a1c1d] dark:text-[#f9f9fb]">Veloce Elite</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-[#5f5e5e] dark:text-[#d9dadc] font-bold Plus Jakarta Sans bold titles, tight letter-spacing hover:text-[#bc000a] transition-all duration-300" href="#">Fleet</a>
+<a class="text-[#5f5e5e] dark:text-[#d9dadc] font-bold Plus Jakarta Sans bold titles, tight letter-spacing hover:text-[#bc000a] transition-all duration-300" href="#">Concierge</a>
+<a class="text-[#5f5e5e] dark:text-[#d9dadc] font-bold Plus Jakarta Sans bold titles, tight letter-spacing hover:text-[#bc000a] transition-all duration-300" href="#">Experience</a>
+</nav>
+<div class="flex items-center gap-6">
+<button class="text-secondary hover:text-primary transition-colors duration-300">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="text-secondary hover:text-primary transition-colors duration-300">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+</button>
+</div>
+</header>
+<!-- SideNavBar (Desktop) -->
+<aside class="hidden md:flex h-screen w-64 fixed left-0 top-0 pt-20 flex-col h-full py-6 pr-4 bg-[#f3f3f5] dark:bg-[#121212] transition-colors">
+<div class="px-6 mb-8">
+<div class="flex items-center gap-3 mb-2">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest overflow-hidden">
+<img alt="User profile" class="w-full h-full object-cover" data-alt="Close-up portrait of a sophisticated man in a charcoal suit, soft cinematic lighting with neutral background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbgh9ay-zeMrkYFsfZaHMCIV3syt2XzwSjI9AMeXIjjSFQsyqhD61FmM4t-c7rZFra91aGEvI2D0K-beHsFnpHvTdCGZdH83muSWg2On3LmytLmcsQMVB_7rSRAO2KZtzyavjd0WWT_ORjXsdyTFqr-bwJ92XQUUwWyWg_VmWV0C8M45VMXD8VwFDRE7CM4H4nGmn4V3-M8badwcRAaQ9Hg6AgoFnnoPUE58NpefxQ291rdiJh6WW01gmwgotS2vbBDhduPYnzkDWk"/>
+</div>
+<div>
+<p class="text-xs font-bold text-primary uppercase tracking-wider">Elite Tier</p>
+<p class="text-sm font-bold text-on-background">Premium Member</p>
+</div>
+</div>
+<button class="w-full mt-4 py-2 px-4 bg-primary text-white text-xs font-bold rounded-lg hover:opacity-90 transition-all">Upgrade Membership</button>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 text-[#5f5e5e] dark:text-[#d9dadc] p-3 hover:translate-x-1 transition-transform Plus Jakarta Sans medium body 0.875rem" href="#">
+<span class="material-symbols-outlined" data-icon="calendar_today">calendar_today</span>
+                My Bookings
+            </a>
+<a class="flex items-center gap-3 text-[#5f5e5e] dark:text-[#d9dadc] p-3 hover:translate-x-1 transition-transform Plus Jakarta Sans medium body 0.875rem" href="#">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+                Payment Methods
+            </a>
+<a class="flex items-center gap-3 text-[#5f5e5e] dark:text-[#d9dadc] p-3 hover:translate-x-1 transition-transform Plus Jakarta Sans medium body 0.875rem" href="#">
+<span class="material-symbols-outlined" data-icon="security">security</span>
+                Security
+            </a>
+<!-- Active Tab: Preferences -->
+<a class="flex items-center gap-3 bg-white dark:bg-[#1a1c1d] text-[#bc000a] font-bold p-3 rounded-r-full shadow-sm Plus Jakarta Sans medium body 0.875rem" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+                Preferences
+            </a>
+</nav>
+<div class="mt-auto pt-6 space-y-1">
+<a class="flex items-center gap-3 text-[#5f5e5e] dark:text-[#d9dadc] p-3 hover:translate-x-1 transition-transform Plus Jakarta Sans medium body 0.875rem" href="#">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+                Help Center
+            </a>
+<a class="flex items-center gap-3 text-[#5f5e5e] dark:text-[#d9dadc] p-3 hover:translate-x-1 transition-transform Plus Jakarta Sans medium body 0.875rem" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+                Sign Out
+            </a>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="md:ml-64 pt-24 pb-12 px-6 md:px-12 max-w-7xl mx-auto">
+<!-- Header Section -->
+<header class="mb-12">
+<h1 class="text-4xl md:text-5xl font-extrabold tracking-tight text-on-background mb-2">Preferences</h1>
+<p class="text-secondary max-w-2xl">Customize your Veloce Elite experience. Manage how you receive updates and personalize your interface.</p>
+</header>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- Bento Section: Notifications & Language -->
+<div class="lg:col-span-8 space-y-8">
+<!-- Notification Settings Card -->
+<section class="bg-surface-container-lowest p-8 rounded-xl shadow-sm">
+<div class="flex items-center gap-3 mb-8">
+<span class="material-symbols-outlined text-primary" data-icon="notifications_active">notifications_active</span>
+<h2 class="text-xl font-bold">Communication Channels</h2>
+</div>
+<div class="space-y-6">
+<!-- Email Notification Row -->
+<div class="flex items-center justify-between p-4 bg-surface-container-low rounded-lg transition-all hover:bg-surface-container">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 flex items-center justify-center bg-white rounded-full">
+<span class="material-symbols-outlined text-secondary" data-icon="mail">mail</span>
+</div>
+<div>
+<p class="font-bold text-on-background">Email Alerts</p>
+<p class="text-xs text-secondary">Booking confirmations &amp; luxury news</p>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<!-- SMS Notification Row -->
+<div class="flex items-center justify-between p-4 bg-surface-container-low rounded-lg transition-all hover:bg-surface-container">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 flex items-center justify-center bg-white rounded-full">
+<span class="material-symbols-outlined text-secondary" data-icon="sms">sms</span>
+</div>
+<div>
+<p class="font-bold text-on-background">SMS / WhatsApp</p>
+<p class="text-xs text-secondary">Urgent trip updates &amp; chauffeur contact</p>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<!-- Push Notification Row -->
+<div class="flex items-center justify-between p-4 bg-surface-container-low rounded-lg transition-all hover:bg-surface-container">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 flex items-center justify-center bg-white rounded-full">
+<span class="material-symbols-outlined text-secondary" data-icon="phonelink_ring">phonelink_ring</span>
+</div>
+<div>
+<p class="font-bold text-on-background">App Notifications</p>
+<p class="text-xs text-secondary">Real-time vehicle tracking</p>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+</div>
+</section>
+<!-- Language & Currency Bento Row -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Language Card -->
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-sm">
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-primary" data-icon="language">language</span>
+<h2 class="text-xl font-bold">Language</h2>
+</div>
+<select class="w-full bg-surface-container-low border-none rounded-lg p-4 text-on-background font-medium focus:ring-1 focus:ring-primary/20 appearance-none cursor-pointer">
+<option>English (US)</option>
+<option>Deutsch (DE)</option>
+<option>Français (FR)</option>
+<option>Italiano (IT)</option>
+<option>日本語 (JP)</option>
+</select>
+<p class="text-xs text-secondary mt-4 italic">Automatically adapts all interface text.</p>
+</div>
+<!-- Currency Card -->
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-sm">
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-primary" data-icon="payments">payments</span>
+<h2 class="text-xl font-bold">Preferred Currency</h2>
+</div>
+<div class="flex flex-wrap gap-2">
+<button class="px-4 py-2 bg-primary text-white font-bold rounded-lg transition-transform hover:scale-105">USD ($)</button>
+<button class="px-4 py-2 bg-surface-container-high text-on-surface font-bold rounded-lg hover:bg-surface-variant transition-all">EUR (€)</button>
+<button class="px-4 py-2 bg-surface-container-high text-on-surface font-bold rounded-lg hover:bg-surface-variant transition-all">GBP (£)</button>
+<button class="px-4 py-2 bg-surface-container-high text-on-surface font-bold rounded-lg hover:bg-surface-variant transition-all">JPY (¥)</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Sidebar Section: Theme & Summary -->
+<div class="lg:col-span-4 space-y-8">
+<!-- Appearance Card -->
+<section class="bg-surface-container-lowest p-8 rounded-xl shadow-sm border-l-4 border-primary">
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-primary" data-icon="palette">palette</span>
+<h2 class="text-xl font-bold">Interface Style</h2>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<!-- Light Theme Toggle -->
+<button class="relative group flex flex-col items-center p-4 rounded-xl border-2 border-primary bg-surface transition-all">
+<div class="w-full h-20 rounded-md bg-white shadow-inner mb-3 overflow-hidden">
+<div class="w-1/2 h-full bg-surface-container"></div>
+</div>
+<span class="text-sm font-bold">Light Mode</span>
+<div class="absolute top-2 right-2 w-4 h-4 bg-primary rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-[10px] font-bold" data-icon="check">check</span>
+</div>
+</button>
+<!-- Dark Theme Toggle -->
+<button class="group flex flex-col items-center p-4 rounded-xl border-2 border-transparent bg-on-background/5 hover:border-surface-variant transition-all">
+<div class="w-full h-20 rounded-md bg-[#1a1c1d] shadow-inner mb-3 overflow-hidden">
+<div class="w-1/2 h-full bg-[#252729]"></div>
+</div>
+<span class="text-sm font-bold text-secondary group-hover:text-on-background">Dark Mode</span>
+</button>
+</div>
+</section>
+<!-- Kinetic Promo Card (Editorial overlap principle) -->
+<div class="relative bg-on-background rounded-xl p-8 overflow-hidden min-h-[320px] flex flex-col justify-end group">
+<!-- Overlapping image -->
+<img alt="Interior dashboard" class="absolute -top-10 -right-20 w-80 h-80 object-cover rotate-12 opacity-50 group-hover:rotate-6 transition-transform duration-700" data-alt="Modern luxury car interior with red ambient lighting on the dashboard and sleek carbon fiber details, moody atmosphere" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5Z2oEvfKFcvYRelZJJWQNEU5W2TJBPnw5sXyyr09xICDiCA-A8rxxfk7x9bZ_L0mQ1aw2lF9eFOzUHVo7DfQiK0pEuwAe6BR5NGdp0ug2vfs6TK58EmnqTEVKuZNQG5yh3DWYfMth-xTFxEy3QuIdImfYoickxVTZlutSmtCyRasjyCygLs1B-APVMTLZahQ8L4OwxZfuLUjvI1-SEQlbnEEhCJ99OuDOf-mberjo9EuL8uqby6iMYGxi4puKZ21e9h0VkJ1m5jdL"/>
+<div class="relative z-10">
+<h3 class="text-2xl font-black text-white italic tracking-tighter mb-2">Exclusive Concierge</h3>
+<p class="text-gray-400 text-sm mb-6">Get 24/7 access to priority booking and global luxury event invitations.</p>
+<button class="w-full py-3 bg-white text-on-background font-bold rounded-lg hover:bg-gray-200 transition-all flex items-center justify-center gap-2">
+                            Explore Perks
+                            <span class="material-symbols-outlined text-primary text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Footer Summary Card -->
+<div class="p-6 bg-surface-container rounded-xl">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary" data-icon="info">info</span>
+<p class="text-xs text-secondary leading-relaxed">Changes are saved automatically. Some preferences may take a few moments to propagate across all global fleet centers.</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<footer class="md:hidden fixed bottom-0 left-0 w-full bg-surface-container-lowest flex justify-around items-center py-3 z-50">
+<a class="flex flex-col items-center gap-1 text-[#5f5e5e]" href="#">
+<span class="material-symbols-outlined" data-icon="calendar_today">calendar_today</span>
+<span class="text-[10px] font-bold">Bookings</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-[#5f5e5e]" href="#">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+<span class="text-[10px] font-bold">Pay</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-[#bc000a]" href="#">
+<span class="material-symbols-outlined" data-icon="settings" style="font-variation-settings: 'FILL' 1;">settings</span>
+<span class="text-[10px] font-bold">Settings</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-[#5f5e5e]" href="#">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+<span class="text-[10px] font-bold">Profile</span>
+</a>
+</footer>
+</body></html>

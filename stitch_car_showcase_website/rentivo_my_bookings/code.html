@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-container": "#007fa0",
+                        "primary-container": "#e2241f",
+                        "on-background": "#1a1c1d",
+                        "surface": "#f9f9fb",
+                        "primary-fixed": "#ffdad5",
+                        "secondary": "#5f5e5e",
+                        "surface-container-low": "#f3f3f5",
+                        "surface-bright": "#f9f9fb",
+                        "outline": "#926f6a",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-fixed-variant": "#474646",
+                        "primary": "#bc000a",
+                        "tertiary": "#00647f",
+                        "on-error-container": "#93000a",
+                        "on-primary-fixed-variant": "#930005",
+                        "surface-tint": "#c0000a",
+                        "surface-variant": "#e2e2e4",
+                        "on-tertiary": "#ffffff",
+                        "inverse-on-surface": "#f0f0f2",
+                        "tertiary-fixed": "#bbe9ff",
+                        "tertiary-fixed-dim": "#68d3fc",
+                        "on-primary-container": "#fffbff",
+                        "primary-fixed-dim": "#ffb4aa",
+                        "surface-container-high": "#e8e8ea",
+                        "on-surface": "#1a1c1d",
+                        "on-error": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-primary": "#ffb4aa",
+                        "on-tertiary-container": "#fafdff",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "on-tertiary-fixed": "#001f29",
+                        "error-container": "#ffdad6",
+                        "surface-dim": "#d9dadc",
+                        "surface-container": "#eeeef0",
+                        "surface-container-highest": "#e2e2e4",
+                        "outline-variant": "#e7bdb7",
+                        "inverse-surface": "#2f3132",
+                        "secondary-fixed": "#e5e2e1",
+                        "on-tertiary-fixed-variant": "#004d63",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "on-primary-fixed": "#410001",
+                        "secondary-container": "#e5e2e1",
+                        "on-secondary-container": "#656464",
+                        "on-surface-variant": "#5d3f3b",
+                        "background": "#f9f9fb",
+                        "error": "#ba1a1a",
+                        "on-primary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Plus Jakarta Sans"],
+                        "label": ["Plus Jakarta Sans"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .kinetic-text {
+            letter-spacing: -0.02em;
+        }
+    </style>
+</head>
+<body class="bg-background font-body text-on-background antialiased overflow-x-hidden">
+<!-- Top Navigation Bar -->
+<nav class="fixed top-0 w-full z-50 bg-[#f9f9fb] dark:bg-[#1a1c1d] flex justify-between items-center px-8 py-4 w-full max-w-full">
+<div class="text-2xl font-black italic tracking-tighter text-[#1a1c1d] dark:text-[#f9f9fb] kinetic-text">
+            Veloce Elite
+        </div>
+<div class="hidden md:flex items-center gap-8 font-headline font-bold text-sm uppercase tracking-wider">
+<a class="text-[#5f5e5e] dark:text-[#d9dadc] hover:text-[#bc000a] transition-all duration-300" href="#">Fleet</a>
+<a class="text-[#5f5e5e] dark:text-[#d9dadc] hover:text-[#bc000a] transition-all duration-300" href="#">Concierge</a>
+<a class="text-[#5f5e5e] dark:text-[#d9dadc] hover:text-[#bc000a] transition-all duration-300" href="#">Experience</a>
+</div>
+<div class="flex items-center gap-6">
+<button class="material-symbols-outlined text-[#5f5e5e] dark:text-[#d9dadc] hover:text-[#bc000a] transition-all" data-icon="notifications">notifications</button>
+<button class="material-symbols-outlined text-[#bc000a] text-2xl" data-icon="account_circle">account_circle</button>
+</div>
+</nav>
+<div class="flex pt-16">
+<!-- Sidebar Navigation -->
+<aside class="h-screen w-64 fixed left-0 top-0 pt-20 bg-[#f3f3f5] dark:bg-[#121212] flex flex-col py-6 pr-4 hidden lg:flex">
+<div class="px-6 mb-8">
+<div class="flex items-center gap-3 mb-2">
+<img alt="User profile" class="w-10 h-10 rounded-full object-cover" data-alt="Close-up portrait of a sophisticated man with a groomed beard, soft natural lighting, high-end editorial style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8rjSLO-wvjhK_qJhMzTvJj9BPrGJIdWdfbY9-Q22aE-OyJwhJvn2c7yn6c2lXE8P4RtbCSlJMDr5s4g1XdDC13Su-Xhx5vRx6fyVAq70FYIi3-BeqtXhqjkhQBM1vdF6G1ES4Lk4hcJaTTITfuvqys9mbp3kJxa002ognvTMmQ850ILPrawCPz5ND9dPRD1m_xqNI6a5b50VpJgAJABrdRWYbx7MAGOfTmipEFei0vo2QQeCT42NolhLqUdPLTqtFtU2sFezDeHIA"/>
+<div>
+<p class="text-xs font-bold text-[#bc000a] uppercase tracking-widest">Elite Tier</p>
+<p class="text-sm font-bold text-on-background">Premium Member</p>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<!-- ACTIVE TAB: My Bookings -->
+<a class="flex items-center gap-3 bg-white dark:bg-[#1a1c1d] text-[#bc000a] font-bold p-3 rounded-r-full shadow-sm scale-98 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="calendar_today">calendar_today</span>
+<span class="text-sm">My Bookings</span>
+</a>
+<a class="flex items-center gap-3 text-[#5f5e5e] dark:text-[#d9dadc] p-3 hover:translate-x-1 transition-transform hover:bg-[#d9dadc] dark:hover:bg-[#1a1c1d]" href="#">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+<span class="text-sm">Payment Methods</span>
+</a>
+<a class="flex items-center gap-3 text-[#5f5e5e] dark:text-[#d9dadc] p-3 hover:translate-x-1 transition-transform hover:bg-[#d9dadc] dark:hover:bg-[#1a1c1d]" href="#">
+<span class="material-symbols-outlined" data-icon="security">security</span>
+<span class="text-sm">Security</span>
+</a>
+<a class="flex items-center gap-3 text-[#5f5e5e] dark:text-[#d9dadc] p-3 hover:translate-x-1 transition-transform hover:bg-[#d9dadc] dark:hover:bg-[#1a1c1d]" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="text-sm">Preferences</span>
+</a>
+</div>
+<div class="mt-auto px-4 flex flex-col gap-4">
+<button class="bg-primary text-white py-3 px-4 rounded-xl text-xs font-bold uppercase tracking-widest hover:scale-102 transition-transform shadow-lg shadow-primary/20">
+                    Upgrade Membership
+                </button>
+<div class="flex flex-col gap-1 border-t border-surface-variant/20 pt-4">
+<a class="flex items-center gap-3 text-[#5f5e5e] dark:text-[#d9dadc] p-2 text-sm hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-sm" data-icon="help">help</span>
+                        Help Center
+                    </a>
+<a class="flex items-center gap-3 text-[#5f5e5e] dark:text-[#d9dadc] p-2 text-sm hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-sm" data-icon="logout">logout</span>
+                        Sign Out
+                    </a>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 lg:ml-64 p-6 md:p-10 min-h-screen">
+<header class="mb-12">
+<h1 class="text-4xl md:text-5xl font-black italic text-on-background kinetic-text mb-2">My Bookings</h1>
+<p class="text-secondary text-lg">Track your current performance vehicles and past journeys.</p>
+</header>
+<!-- Active Bookings (Bento Grid Style) -->
+<section class="mb-16">
+<div class="flex items-center justify-between mb-8">
+<h2 class="text-xl font-bold uppercase tracking-widest border-l-4 border-primary pl-4">Active &amp; Upcoming</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+<!-- Featured Active Card: Porsche 911 -->
+<div class="md:col-span-8 group relative bg-surface-container-lowest rounded-xl overflow-hidden shadow-2xl shadow-on-background/5 transition-all hover:scale-[1.01]">
+<div class="absolute top-6 left-6 z-10">
+<span class="bg-primary text-white px-4 py-1 rounded-full text-[10px] font-black uppercase tracking-widest flex items-center gap-2">
+<span class="w-2 h-2 bg-white rounded-full animate-pulse"></span> Confirmed
+                            </span>
+</div>
+<div class="flex flex-col md:flex-row h-full">
+<div class="md:w-1/2 p-8 flex flex-col justify-between">
+<div>
+<h3 class="text-3xl font-black italic kinetic-text mb-1">Porsche 911 GT3</h3>
+<p class="text-secondary font-medium mb-6">Ceramic Brakes • Sport Chrono</p>
+<div class="space-y-4">
+<div class="flex items-center gap-4">
+<div class="bg-surface-container rounded-lg p-2">
+<span class="material-symbols-outlined text-primary" data-icon="calendar_month">calendar_month</span>
+</div>
+<div>
+<p class="text-[10px] uppercase font-bold text-secondary">Pickup Date</p>
+<p class="text-sm font-bold">Oct 12, 2023 - 10:00 AM</p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="bg-surface-container rounded-lg p-2">
+<span class="material-symbols-outlined text-primary" data-icon="location_on">location_on</span>
+</div>
+<div>
+<p class="text-[10px] uppercase font-bold text-secondary">Location</p>
+<p class="text-sm font-bold">Beverly Hills Private Hangar</p>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-8 pt-6 border-t border-surface-variant/30 flex items-center justify-between">
+<div class="text-2xl font-black text-primary">$1,850.00</div>
+<button class="bg-on-background text-white px-6 py-3 rounded-lg text-xs font-bold uppercase hover:bg-primary transition-colors">Manage</button>
+</div>
+</div>
+<div class="md:w-1/2 relative min-h-[300px]">
+<img alt="Porsche 911 GT3" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Side profile of a silver Porsche 911 GT3 parked on a modern architectural driveway at twilight, sleek lines, sharp highlights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbNjXoUBp2q74QkpZUyV5kp_ycB8olkehmk5Bo_fcvk2Pauc_mElYZUY-YwZnYPE34zkX9yr1EM6oURmiwwAUcCJM_4MyXsF0opbRx3Z49CVzTPZMt-roAI35KWMwuKF7-19wwrwI4ZxFSyL1Q2p1ZSYNeQD0ed7VabJWX2ntf0MK8hIGrTdpaUry7OroNJSm7uEYGGrDrSKZpeiYHXh9M5pZqyNx9UQDMjWud-20QRmhxcbwbBQmz9KAhCNNHSRyl_2i7GVMmCf0S"/>
+<div class="absolute inset-0 bg-gradient-to-r from-surface-container-lowest via-transparent to-transparent md:block hidden"></div>
+</div>
+</div>
+</div>
+<!-- Side Card: Tesla Model S -->
+<div class="md:col-span-4 bg-surface-container-low rounded-xl p-8 flex flex-col justify-between border border-transparent hover:border-primary/20 transition-all">
+<div>
+<div class="flex justify-between items-start mb-6">
+<span class="bg-on-background text-white px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest">In Progress</span>
+<span class="material-symbols-outlined text-secondary hover:text-primary cursor-pointer" data-icon="more_vert">more_vert</span>
+</div>
+<h3 class="text-xl font-black italic kinetic-text mb-1">Tesla Model S Plaid</h3>
+<p class="text-sm text-secondary mb-4">Midnight Cherry Red • Carbon Wheels</p>
+<div class="bg-white/50 backdrop-blur-md rounded-xl p-4 mb-6">
+<div class="flex items-center justify-between text-xs font-bold mb-2">
+<span class="text-secondary uppercase">Return Countdown</span>
+<span class="text-primary">04:12:35</span>
+</div>
+<div class="w-full bg-surface-container h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-3/4"></div>
+</div>
+</div>
+</div>
+<img alt="Tesla Model S" class="rounded-lg object-cover h-40 w-full mb-6 shadow-xl" data-alt="Tesla Model S Plaid front three-quarters view in a minimalist white studio, high contrast lighting emphasizing the aero design" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCaJXjt9kvMm2SvtfWJdsr8KWmr8ucBHGJqIq0pqEB3jT2fC5We2SeHmKWwfiEzFN6VrxnfKfanmgk7DV22Y5j8QPqth4vJpmaJB8fYbLcXN131rryoP9077Wve5n4tHqE1aFetxNSEiQDmPcHQ3mjKJiDzeohhNd99KdFHy8OT7B8AS6BGJjFpJMgezvv3yiPLTYTRQ6UwLsj-lzRKHc-PImaAYVFKe0-MOeSO2tOeSfRhACMgCaPbU_XMZTzOEY0ma_I3Yqoi017C"/>
+<div class="flex items-center justify-between">
+<span class="text-lg font-black">$450.00 <span class="text-xs font-medium text-secondary">/ day</span></span>
+<button class="text-primary font-bold text-xs uppercase underline tracking-widest">Live Map</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Past Bookings (Asymmetric List) -->
+<section>
+<div class="flex items-center justify-between mb-8">
+<h2 class="text-xl font-bold uppercase tracking-widest border-l-4 border-surface-dim pl-4">History</h2>
+<button class="text-sm font-bold text-secondary hover:text-primary flex items-center gap-2 transition-colors">
+                        Filter by date <span class="material-symbols-outlined text-base" data-icon="tune">tune</span>
+</button>
+</div>
+<div class="space-y-6">
+<!-- History Item 1 -->
+<div class="group flex flex-col md:flex-row items-center gap-6 p-4 rounded-2xl hover:bg-surface-container transition-all">
+<div class="w-full md:w-48 h-32 rounded-xl overflow-hidden shrink-0">
+<img alt="BMW M4" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="Black BMW M4 Competition accelerating on a coastal highway at sunrise, blurred background creating a sense of speed" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCD5EQxBRGw444zVFgO_Vjnh0gWIhXarWT-CiuD46V_BbmGpsHqQ7Fqep5pToFNscp77mGuuXewg3gl5hMxssUBcMq2WaEe4EqJe5-Vw90ujTl83hpIWbwu8eLan5L96Crl7_lmWs9HBsgyRrP9zFeb0K2Us1J3h24f6-j0uP8O-TTur5X5NrqfWAEJUs8BrC6anoRH1q2o4aamICz4X518dSsusBwxJYyUAe6JMbNkuicl51-9nHtSAwJmjdjJLda-gk5FvUaobBWu"/>
+</div>
+<div class="flex-1 w-full">
+<div class="flex flex-col md:flex-row md:items-center justify-between mb-2">
+<h4 class="text-lg font-black italic kinetic-text">BMW M4 Competition</h4>
+<span class="text-xs font-bold text-secondary bg-surface-container-high px-3 py-1 rounded-full uppercase">Completed • Sep 2023</span>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<div>
+<p class="text-[10px] uppercase font-bold text-secondary">Mileage</p>
+<p class="text-sm font-bold">142 Miles</p>
+</div>
+<div>
+<p class="text-[10px] uppercase font-bold text-secondary">Duration</p>
+<p class="text-sm font-bold">2 Days</p>
+</div>
+<div>
+<p class="text-[10px] uppercase font-bold text-secondary">Total Paid</p>
+<p class="text-sm font-bold">$720.00</p>
+</div>
+<div class="flex items-center justify-end">
+<button class="flex items-center gap-1 text-xs font-bold text-primary uppercase tracking-widest hover:translate-x-1 transition-transform">
+                                        Invoice <span class="material-symbols-outlined text-sm" data-icon="download">download</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- History Item 2 -->
+<div class="group flex flex-col md:flex-row items-center gap-6 p-4 rounded-2xl hover:bg-surface-container transition-all">
+<div class="w-full md:w-48 h-32 rounded-xl overflow-hidden shrink-0">
+<img alt="Ferrari Roma" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="Rear view of a red Ferrari Roma at night under neon city lights, reflections on the glossy paint" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCN1SL97WMw93OQ7zrTGQOOK_xJhz9-ndQ2e5o-ScMPtDzr74EDF63tbEo-6ZT_ycya28JmDypmQL9WBaY1bi_7NR16gsaq7j1tONABkIV05H1oBm5B7uqcX4Cc_gA-B8zBt2yhXVctim1sCWNwlPQTxB2UdrkASd8UQcJyvgUJfZJr2bLGsUGy0TVG5kPMF14Q8pN2-3MrdjruNEdhLy7KvD74ZMbR4l5xQkwTFzgtRBdFrrN7W8I-oGXNiRVgrCCDwz_NZqnQ-kpb"/>
+</div>
+<div class="flex-1 w-full">
+<div class="flex flex-col md:flex-row md:items-center justify-between mb-2">
+<h4 class="text-lg font-black italic kinetic-text">Ferrari Roma</h4>
+<span class="text-xs font-bold text-secondary bg-surface-container-high px-3 py-1 rounded-full uppercase">Completed • Aug 2023</span>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<div>
+<p class="text-[10px] uppercase font-bold text-secondary">Mileage</p>
+<p class="text-sm font-bold">88 Miles</p>
+</div>
+<div>
+<p class="text-[10px] uppercase font-bold text-secondary">Duration</p>
+<p class="text-sm font-bold">24 Hours</p>
+</div>
+<div>
+<p class="text-[10px] uppercase font-bold text-secondary">Total Paid</p>
+<p class="text-sm font-bold">$1,250.00</p>
+</div>
+<div class="flex items-center justify-end">
+<button class="flex items-center gap-1 text-xs font-bold text-primary uppercase tracking-widest hover:translate-x-1 transition-transform">
+                                        Invoice <span class="material-symbols-outlined text-sm" data-icon="download">download</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- History Item 3 -->
+<div class="group flex flex-col md:flex-row items-center gap-6 p-4 rounded-2xl hover:bg-surface-container transition-all">
+<div class="w-full md:w-48 h-32 rounded-xl overflow-hidden shrink-0">
+<img alt="Range Rover" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="White Range Rover Autobiography driving through a snowy mountain pass, dramatic cold light, sharp focus" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA94aUDtATMNYHTcywz51jPyevApEYlZrjfSIj-9N8gRAWCpArRABmlWjglL3Z26rKUzF9FPgMCAkPPeqipyjtfuKgUaFswtQa_DnasaR0JHpQ0FT65yMGLe32Ei5KM8hMmXYKGv57LCYqfQDr3N2OX7CAFJYuKY7fOvoX-NQB-7u8IjerIrWZrtKRzWmC2id7iw9XTgZ3_RZ92yLRbTcAIoeM5D95eZjFFG8XAmsDlKXS8kQOqCpqDvj7a2vaMUtDAX2iGnagmRSyi"/>
+</div>
+<div class="flex-1 w-full">
+<div class="flex flex-col md:flex-row md:items-center justify-between mb-2">
+<h4 class="text-lg font-black italic kinetic-text">Range Rover Autobiography</h4>
+<span class="text-xs font-bold text-secondary bg-surface-container-high px-3 py-1 rounded-full uppercase">Completed • Jul 2023</span>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<div>
+<p class="text-[10px] uppercase font-bold text-secondary">Mileage</p>
+<p class="text-sm font-bold">312 Miles</p>
+</div>
+<div>
+<p class="text-[10px] uppercase font-bold text-secondary">Duration</p>
+<p class="text-sm font-bold">3 Days</p>
+</div>
+<div>
+<p class="text-[10px] uppercase font-bold text-secondary">Total Paid</p>
+<p class="text-sm font-bold">$980.00</p>
+</div>
+<div class="flex items-center justify-end">
+<button class="flex items-center gap-1 text-xs font-bold text-primary uppercase tracking-widest hover:translate-x-1 transition-transform">
+                                        Invoice <span class="material-symbols-outlined text-sm" data-icon="download">download</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+</div>
+<!-- Mobile Bottom Navigation -->
+<nav class="md:hidden fixed bottom-0 w-full bg-white dark:bg-[#1a1c1d] border-t border-surface-variant flex justify-around items-center py-3 z-50">
+<button class="flex flex-col items-center gap-1 text-primary">
+<span class="material-symbols-outlined" data-icon="calendar_month" style="font-variation-settings: 'FILL' 1;">calendar_month</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">Bookings</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-secondary">
+<span class="material-symbols-outlined" data-icon="explore">explore</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">Explore</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-secondary">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">Wallet</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-secondary">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">Profile</span>
+</button>
+</nav>
+</body></html>

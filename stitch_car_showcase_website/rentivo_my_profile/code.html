@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>User Profile | RENTIVO</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-container": "#e2241f",
+                        "surface-container": "#eeeef0",
+                        "secondary-fixed": "#e5e2e1",
+                        "on-error-container": "#93000a",
+                        "tertiary": "#00647f",
+                        "secondary-container": "#e5e2e1",
+                        "on-tertiary-container": "#fafdff",
+                        "surface-tint": "#c0000a",
+                        "error-container": "#ffdad6",
+                        "tertiary-fixed": "#bbe9ff",
+                        "inverse-surface": "#2f3132",
+                        "error": "#ba1a1a",
+                        "surface-container-low": "#f3f3f5",
+                        "primary-fixed-dim": "#ffb4aa",
+                        "on-secondary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-bright": "#f9f9fb",
+                        "on-tertiary-fixed-variant": "#004d63",
+                        "on-primary-fixed-variant": "#930005",
+                        "on-secondary-fixed-variant": "#474646",
+                        "on-primary": "#ffffff",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "on-secondary-container": "#656464",
+                        "secondary": "#5f5e5e",
+                        "on-background": "#1a1c1d",
+                        "surface-dim": "#d9dadc",
+                        "on-tertiary": "#ffffff",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "outline": "#926f6a",
+                        "primary-fixed": "#ffdad5",
+                        "on-error": "#ffffff",
+                        "inverse-on-surface": "#f0f0f2",
+                        "background": "#f9f9fb",
+                        "on-tertiary-fixed": "#001f29",
+                        "on-primary-container": "#fffbff",
+                        "inverse-primary": "#ffb4aa",
+                        "on-primary-fixed": "#410001",
+                        "tertiary-fixed-dim": "#68d3fc",
+                        "outline-variant": "#e7bdb7",
+                        "surface-container-highest": "#e2e2e4",
+                        "primary": "#bc000a",
+                        "tertiary-container": "#007fa0",
+                        "surface-container-high": "#e8e8ea",
+                        "on-surface": "#1a1c1d",
+                        "on-surface-variant": "#5d3f3b",
+                        "surface-variant": "#e2e2e4",
+                        "surface": "#f9f9fb"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Plus Jakarta Sans"],
+                        "label": ["Plus Jakarta Sans"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    </style>
+</head>
+<body class="bg-background text-on-background selection:bg-primary selection:text-white">
+<!-- Top Navigation Bar -->
+<header class="w-full top-0 sticky bg-[#f3f3f5] dark:bg-[#1a1c1d] z-50">
+<div class="flex justify-between items-center h-20 px-8 max-w-[1440px] mx-auto">
+<div class="text-2xl font-black italic tracking-tighter text-[#bc000a]">RENTIVO</div>
+<nav class="hidden md:flex items-center gap-8 font-['Plus_Jakarta_Sans'] font-bold tracking-tight">
+<a class="text-[#5f5e5e] dark:text-[#d9dadc] hover:text-[#bc000a] transition-all duration-300 hover:scale-105 transform" href="#">Fleet</a>
+<a class="text-[#5f5e5e] dark:text-[#d9dadc] hover:text-[#bc000a] transition-all duration-300 hover:scale-105 transform" href="#">Editorial</a>
+<a class="text-[#5f5e5e] dark:text-[#d9dadc] hover:text-[#bc000a] transition-all duration-300 hover:scale-105 transform" href="#">Experience</a>
+<a class="text-[#5f5e5e] dark:text-[#d9dadc] hover:text-[#bc000a] transition-all duration-300 hover:scale-105 transform" href="#">Concierge</a>
+</nav>
+<div class="flex items-center gap-6">
+<button class="material-symbols-outlined text-on-surface hover:text-primary transition-colors">notifications</button>
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-white shadow-sm">
+<img alt="User profile avatar" data-alt="Close up portrait of a sophisticated man with a well-groomed beard wearing a luxury tailored suit against a neutral studio background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuALBxHg2_b_upig4QvoTMbUw3zEljzNAdTFIqBS5Ix0If8Tqy10u9i6pVaohDW2aFlIN7wvESbp9KiecC3UwvKqAXGmPNGeRU18R2BFKT1Dojxxn97qRxUniXX4SM1NiCjUvWLfzfbk2PJ3X4PJtRUOodY5GAiFZ2olJorKXRxu7MuoRvbkAxF4I7RvxtcGXw72ARaQgl2LMLWWCLDwpdYIHo3IgF3qXvwX05N5B7kGWGR-Oh9iVSdgfaRk9wcPu7YONPMGaeOm6PjP"/>
+</div>
+</div>
+</div>
+</header>
+<div class="flex max-w-[1440px] mx-auto">
+<!-- Sidebar Navigation -->
+<aside class="hidden lg:flex flex-col p-6 gap-2 h-screen w-72 rounded-r-2xl bg-[#f3f3f5] dark:bg-[#242627] shadow-xl shadow-black/5 sticky top-20">
+<div class="mb-8 px-2">
+<h2 class="text-xl font-bold text-on-background">Alexander Rossi</h2>
+<p class="text-xs text-primary font-bold uppercase tracking-widest mt-1">Elite Member since 2023</p>
+</div>
+<nav class="space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 bg-white dark:bg-[#2c2e2f] text-[#bc000a] font-bold rounded-xl shadow-sm transition-transform duration-200 hover:translate-x-1 font-['Plus_Jakarta_Sans'] text-sm" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span> Profile Overview
+                </a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#5f5e5e] dark:text-[#d9dadc] hover:bg-white dark:hover:bg-[#242627] rounded-xl transition-transform duration-200 hover:translate-x-1 font-['Plus_Jakarta_Sans'] text-sm" href="#">
+<span class="material-symbols-outlined" data-icon="calendar_today">calendar_today</span> My Bookings
+                </a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#5f5e5e] dark:text-[#d9dadc] hover:bg-white dark:hover:bg-[#242627] rounded-xl transition-transform duration-200 hover:translate-x-1 font-['Plus_Jakarta_Sans'] text-sm" href="#">
+<span class="material-symbols-outlined" data-icon="payments">payments</span> Payment Methods
+                </a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#5f5e5e] dark:text-[#d9dadc] hover:bg-white dark:hover:bg-[#242627] rounded-xl transition-transform duration-200 hover:translate-x-1 font-['Plus_Jakarta_Sans'] text-sm" href="#">
+<span class="material-symbols-outlined" data-icon="shield">shield</span> Security
+                </a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#5f5e5e] dark:text-[#d9dadc] hover:bg-white dark:hover:bg-[#242627] rounded-xl transition-transform duration-200 hover:translate-x-1 font-['Plus_Jakarta_Sans'] text-sm" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span> Preferences
+                </a>
+</nav>
+<div class="mt-auto p-4 bg-primary rounded-2xl text-white">
+<p class="text-xs font-medium opacity-80 mb-2">Current Tier</p>
+<p class="text-lg font-bold mb-4">Elite Status</p>
+<button class="w-full py-2 bg-white text-primary text-xs font-bold rounded-lg hover:scale-[1.02] transition-transform">Upgrade to Prestige</button>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 p-8 md:p-12 space-y-12 overflow-hidden">
+<!-- Header Section -->
+<section class="relative">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div class="space-y-4">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary-fixed text-on-primary-fixed text-[10px] font-bold uppercase tracking-wider">
+                            Account Profile
+                        </div>
+<h1 class="text-5xl md:text-7xl font-bold tracking-tighter text-on-background">Management</h1>
+</div>
+</div>
+</section>
+<!-- Bento Layout Content -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Personal Information (Left Side) -->
+<section class="lg:col-span-7 space-y-8">
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-xl shadow-black/[0.03]">
+<div class="flex justify-between items-center mb-10">
+<h3 class="text-xl font-bold">Personal Information</h3>
+<span class="material-symbols-outlined text-secondary hover:text-primary cursor-pointer">edit_note</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
+<div class="space-y-2">
+<label class="text-[10px] uppercase tracking-widest text-secondary font-bold">Full Name</label>
+<input class="w-full bg-surface-container-low border-none rounded-sm px-4 py-3 text-sm focus:ring-1 focus:ring-primary/20 transition-all font-medium" type="text" value="Alexander Rossi"/>
+</div>
+<div class="space-y-2">
+<label class="text-[10px] uppercase tracking-widest text-secondary font-bold">Email Address</label>
+<input class="w-full bg-surface-container-low border-none rounded-sm px-4 py-3 text-sm focus:ring-1 focus:ring-primary/20 transition-all font-medium" type="email" value="alex.rossi@prestige.com"/>
+</div>
+<div class="space-y-2">
+<label class="text-[10px] uppercase tracking-widest text-secondary font-bold">Phone Number</label>
+<input class="w-full bg-surface-container-low border-none rounded-sm px-4 py-3 text-sm focus:ring-1 focus:ring-primary/20 transition-all font-medium" type="text" value="+1 (555) 012-3456"/>
+</div>
+<div class="space-y-2">
+<label class="text-[10px] uppercase tracking-widest text-secondary font-bold">Location</label>
+<input class="w-full bg-surface-container-low border-none rounded-sm px-4 py-3 text-sm focus:ring-1 focus:ring-primary/20 transition-all font-medium" type="text" value="Milan, Italy"/>
+</div>
+<div class="md:col-span-2 space-y-2">
+<label class="text-[10px] uppercase tracking-widest text-secondary font-bold">Billing Address</label>
+<input class="w-full bg-surface-container-low border-none rounded-sm px-4 py-3 text-sm focus:ring-1 focus:ring-primary/20 transition-all font-medium" type="text" value="Viale Monza, 12, 20127 Milano MI"/>
+</div>
+</div>
+<div class="mt-10 flex justify-end">
+<button class="px-8 py-4 bg-gradient-to-br from-primary to-primary-container text-white text-sm font-bold rounded-xl hover:scale-105 transition-all shadow-lg shadow-primary/20">
+                                Save Changes
+                            </button>
+</div>
+</div>
+<!-- Recent Activity -->
+<div class="bg-surface-container-lowest p-8 rounded-xl">
+<h3 class="text-xl font-bold mb-8">Recent Activity</h3>
+<div class="space-y-0">
+<div class="flex items-center justify-between py-6 border-b border-outline-variant/10">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">directions_car</span>
+</div>
+<div>
+<p class="text-sm font-bold">Tesla Model S Plaid</p>
+<p class="text-xs text-secondary">Completed • Oct 12, 2023</p>
+</div>
+</div>
+<span class="text-sm font-bold text-on-background">€1,240.00</span>
+</div>
+<div class="flex items-center justify-between py-6 border-b border-outline-variant/10">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">history</span>
+</div>
+<div>
+<p class="text-sm font-bold">Ferrari 296 GTB</p>
+<p class="text-xs text-secondary">Completed • Sep 24, 2023</p>
+</div>
+</div>
+<span class="text-sm font-bold text-on-background">€3,150.00</span>
+</div>
+<div class="flex items-center justify-between py-6">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">electric_car</span>
+</div>
+<div>
+<p class="text-sm font-bold">Lucid Air Sapphire</p>
+<p class="text-xs text-secondary">Completed • Aug 05, 2023</p>
+</div>
+</div>
+<span class="text-sm font-bold text-on-background">€1,800.00</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Upcoming Journey & Specials (Right Side) -->
+<section class="lg:col-span-5 space-y-8">
+<!-- Upcoming Journey Card -->
+<div class="relative overflow-hidden group">
+<div class="absolute inset-0 bg-on-background z-0">
+<img alt="Porsche 911" class="w-full h-full object-cover opacity-50 group-hover:scale-110 transition-transform duration-700" data-alt="Side profile of a sleek grey Porsche 911 GT3 RS parked on a dramatic dark asphalt road at dusk with moody cinematic lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzQQ_xzlHRF5Ip_rDeK_x3sZpoc8OYiaFchSloKTX0EssYQxMSFuNo-BHoKNeccn2i9PjySvn9_YjeoVSYEEtSD96JHvQVMY_rszctvS_EwUy3IIAtkezTxEYVnm6QRfdIl3DE0I-xz26Z-fEBzUDcLfI14sOmTqfKJeUXVMoNYgVAn3oWZO1QTgcFXKMqhhfVSoizopVjnx-C3MJ13wAV_XR3K7C6_dUJEmSzTJOhMOqqTe70BhK1VqErJvNieRWxuZ_ntdPsXGaj"/>
+</div>
+<div class="relative z-10 p-8 min-h-[420px] flex flex-col justify-between text-white">
+<div>
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary text-[10px] font-bold uppercase tracking-wider mb-6">
+                                    Upcoming Journey
+                                </div>
+<h4 class="text-3xl font-bold tracking-tight mb-2">Porsche 911 GT3 RS</h4>
+<div class="flex gap-4 mt-4">
+<div class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/10 backdrop-blur-md text-[10px] font-medium">
+<span class="material-symbols-outlined text-xs">speed</span> 3.2s
+                                    </div>
+<div class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/10 backdrop-blur-md text-[10px] font-medium">
+<span class="material-symbols-outlined text-xs">settings_input_component</span> PDK
+                                    </div>
+</div>
+</div>
+<div class="bg-white/10 backdrop-blur-xl p-6 rounded-xl border border-white/10">
+<div class="flex justify-between items-center mb-4">
+<p class="text-xs font-bold uppercase opacity-60">Status</p>
+<p class="text-xs font-bold uppercase text-primary">Confirmed</p>
+</div>
+<div class="flex justify-between items-end">
+<div>
+<p class="text-[10px] opacity-60 uppercase tracking-tighter">Pickup Date</p>
+<p class="text-lg font-bold">Nov 14, 2024</p>
+</div>
+<button class="flex items-center gap-2 text-xs font-bold hover:text-primary transition-colors">
+                                        Manage Booking <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Membership Status Card -->
+<div class="bg-surface-container-low p-8 rounded-xl border border-outline-variant/10">
+<div class="flex items-center gap-4 mb-6">
+<div class="w-12 h-12 rounded-full bg-white flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-primary" data-icon="stars" style="font-variation-settings: 'FILL' 1;">stars</span>
+</div>
+<div>
+<h4 class="font-bold">Elite Rewards</h4>
+<p class="text-xs text-secondary">You are 2 rentals away from <span class="text-primary font-bold">Ambassador</span></p>
+</div>
+</div>
+<div class="w-full bg-surface-container h-1 rounded-full mb-6">
+<div class="bg-primary h-1 rounded-full" style="width: 75%"></div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="p-4 bg-white rounded-lg shadow-sm">
+<p class="text-[10px] uppercase text-secondary font-bold mb-1">Points</p>
+<p class="text-xl font-bold">42,850</p>
+</div>
+<div class="p-4 bg-white rounded-lg shadow-sm">
+<p class="text-[10px] uppercase text-secondary font-bold mb-1">Savings</p>
+<p class="text-xl font-bold">€1,420</p>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+</div>
+<!-- Footer -->
+<footer class="bg-[#f9f9fb] dark:bg-[#1a1c1d] w-full py-12 border-t border-[#d9dadc]/30 mt-20">
+<div class="max-w-7xl mx-auto px-8 flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="text-lg font-black text-[#1a1c1d] dark:text-white">RENTIVO</div>
+<nav class="flex flex-wrap justify-center gap-8 font-['Plus_Jakarta_Sans'] text-[10px] uppercase tracking-[0.2em]">
+<a class="text-[#5f5e5e] dark:text-[#d9dadc] hover:text-[#bc000a] transition-colors" href="#">Privacy Policy</a>
+<a class="text-[#5f5e5e] dark:text-[#d9dadc] hover:text-[#bc000a] transition-colors" href="#">Terms of Service</a>
+<a class="text-[#5f5e5e] dark:text-[#d9dadc] hover:text-[#bc000a] transition-colors" href="#">Fleet Logistics</a>
+<a class="text-[#5f5e5e] dark:text-[#d9dadc] hover:text-[#bc000a] transition-colors" href="#">Press Enquiries</a>
+</nav>
+<p class="font-['Plus_Jakarta_Sans'] text-[10px] uppercase tracking-[0.2em] text-[#5f5e5e] dark:text-[#d9dadc]">
+                © 2024 RENTIVO AUTOMOTIVE GROUP. ALL RIGHTS RESERVED.
+            </p>
+</div>
+</footer>
+</body></html>

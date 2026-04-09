@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "outline-variant": "#e7bdb7",
+                    "surface-container": "#eeeef0",
+                    "on-tertiary-container": "#fafdff",
+                    "on-secondary-fixed": "#1c1b1b",
+                    "on-primary-container": "#fffbff",
+                    "on-secondary": "#ffffff",
+                    "inverse-primary": "#ffb4aa",
+                    "tertiary-fixed": "#bbe9ff",
+                    "on-background": "#1a1c1d",
+                    "on-tertiary": "#ffffff",
+                    "on-surface": "#1a1c1d",
+                    "error": "#ba1a1a",
+                    "on-error": "#ffffff",
+                    "surface-dim": "#d9dadc",
+                    "on-primary": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "tertiary": "#00647f",
+                    "on-secondary-fixed-variant": "#474646",
+                    "inverse-surface": "#2f3132",
+                    "secondary-fixed-dim": "#c8c6c5",
+                    "tertiary-fixed-dim": "#68d3fc",
+                    "surface-tint": "#c0000a",
+                    "surface-container-lowest": "#ffffff",
+                    "primary-container": "#e2241f",
+                    "primary": "#bc000a",
+                    "on-surface-variant": "#5d3f3b",
+                    "surface-variant": "#e2e2e4",
+                    "secondary": "#5f5e5e",
+                    "on-primary-fixed": "#410001",
+                    "secondary-fixed": "#e5e2e1",
+                    "primary-fixed": "#ffdad5",
+                    "on-error-container": "#93000a",
+                    "surface-container-low": "#f3f3f5",
+                    "on-secondary-container": "#656464",
+                    "surface-container-high": "#e8e8ea",
+                    "on-primary-fixed-variant": "#930005",
+                    "background": "#f9f9fb",
+                    "surface-container-highest": "#e2e2e4",
+                    "surface-bright": "#f9f9fb",
+                    "surface": "#f9f9fb",
+                    "primary-fixed-dim": "#ffb4aa",
+                    "on-tertiary-fixed": "#001f29",
+                    "outline": "#926f6a",
+                    "on-tertiary-fixed-variant": "#004d63",
+                    "tertiary-container": "#007fa0",
+                    "inverse-on-surface": "#f0f0f2",
+                    "secondary-container": "#e5e2e1"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Plus Jakarta Sans"],
+                    "body": ["Plus Jakarta Sans"],
+                    "label": ["Plus Jakarta Sans"]
+            }
+          },
+        }
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .editorial-shadow {
+            box-shadow: 0 12px 40px -12px rgba(26, 28, 29, 0.06);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-white/90 dark:bg-zinc-950/90 backdrop-blur-md shadow-sm">
+<div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
+<div class="text-2xl font-black italic tracking-tighter text-zinc-900 dark:text-white font-headline">RENTIVO</div>
+<div class="hidden md:flex items-center space-x-8 font-['Plus_Jakarta_Sans'] font-bold tracking-tight">
+<a class="text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-all duration-300 hover:scale-105" href="#">Home</a>
+<a class="text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-all duration-300 hover:scale-105" href="#">Page</a>
+<a class="text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-all duration-300 hover:scale-105" href="#">Inventory</a>
+<a class="text-red-600 border-b-2 border-red-600 pb-1 transition-all duration-300 hover:scale-105" href="#">Blog</a>
+</div>
+<div class="flex items-center space-x-6">
+<div class="hidden lg:flex items-center bg-surface-container-low px-4 py-2 rounded-full">
+<span class="material-symbols-outlined text-secondary text-sm mr-2" data-icon="search">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm w-40 font-medium" placeholder="Search articles..." type="text"/>
+</div>
+<button class="bg-primary text-on-primary px-6 py-2.5 rounded-xl font-bold transition-all duration-300 hover:scale-105 active:scale-95 shadow-lg shadow-primary/20">Rent Now</button>
+</div>
+</div>
+</nav>
+<main class="pt-32 pb-24 max-w-7xl mx-auto px-6">
+<!-- Hero Featured Article: Kinetic Asymmetry -->
+<section class="relative mb-32 grid grid-cols-12 gap-0 items-center">
+<div class="col-span-12 lg:col-span-8 relative z-10">
+<div class="overflow-hidden rounded-xl editorial-shadow">
+<img alt="Featured car" class="w-full aspect-[16/9] object-cover hover:scale-105 transition-transform duration-700" data-alt="Side profile of a sleek silver Porsche 911 parked on a winding coastal road at sunset with soft orange light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxt1-dI4M2uZ7iGbnGYsKX6lItPMouISRl4iI7gyHYIS2PMQf3CoGYd7GFvVlvERXZivR5aY_ANORBdsCgeNxsIJeNXPAEo5EdicV3HRRLJXWIpauFtLDZxzLF9B4gc11oLmwl4FpMx5WSs_FVn40-aC1FSOpejJjwA5JDL1xBH7VNi3RycBol2U4I1oEfoazu3Er8KSzk275ghlFYgiJN6QHhZgfNkJOd34LxVxcRs_WiSunQLuTxQBboziX9_fJtnz6RXpHhkqHO"/>
+</div>
+<!-- Specification HUD Overlay -->
+<div class="absolute -bottom-10 right-10 hidden lg:flex space-x-4">
+<div class="bg-white/70 backdrop-blur-xl p-6 rounded-xl editorial-shadow border-l-4 border-primary">
+<p class="text-[10px] uppercase tracking-[0.2em] text-secondary font-bold mb-1">Top Speed</p>
+<p class="text-2xl font-black italic tracking-tighter">197 MPH</p>
+</div>
+<div class="bg-white/70 backdrop-blur-xl p-6 rounded-xl editorial-shadow border-l-4 border-primary">
+<p class="text-[10px] uppercase tracking-[0.2em] text-secondary font-bold mb-1">Acceleration</p>
+<p class="text-2xl font-black italic tracking-tighter">2.7 SEC</p>
+</div>
+</div>
+</div>
+<div class="col-span-12 lg:col-span-5 lg:-ml-24 mt-12 lg:mt-0 relative z-20">
+<div class="bg-white p-10 lg:p-16 rounded-xl shadow-2xl shadow-zinc-200/50">
+<span class="inline-block px-3 py-1 bg-primary/10 text-primary text-[10px] font-black tracking-widest uppercase mb-6 rounded-full">Cover Story</span>
+<h1 class="text-4xl lg:text-6xl font-bold tracking-tight mb-6 leading-[1.1]">The Art of the Grand Tour.</h1>
+<p class="text-secondary leading-relaxed mb-8 text-lg">Exploring the silent revolution of luxury performance and why the journey matters more than the destination in 2024.</p>
+<div class="flex items-center space-x-4">
+<div class="w-12 h-12 rounded-full overflow-hidden">
+<img alt="Author" class="w-full h-full object-cover" data-alt="Professional portrait of a male automotive journalist in a black turtleneck against a neutral grey background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlcr_UB9dvqTQZynnBvU-gAjYisSp-l7gpLrREU33lAVjERcgDaA-YFCZe3QThAD7JcH4vyzxYiPfTNkuLRyn6b4A2Oi-1GvcYsFUU5ZzAsgVEQw35GWwFgyROZfmL-Bdd3wWIbpn1XbHuend8QXRV17mCAsDqfmMwCXLCMWLdo3blIxO-n0jXza-h12Il3j4S_hdalF3JuYXBuCObnXL1Aa-LGcSCl3Llymzfpy3uWbxsw-CtPYzze-4mDO63tkOvYflAKBSCX65T"/>
+</div>
+<div>
+<p class="font-bold text-sm">Julian Vance</p>
+<p class="text-zinc-400 text-xs uppercase tracking-wider">Editorial Lead</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Category Filter: Tonal Minimalist -->
+<div class="flex items-center justify-between mb-12 overflow-x-auto pb-4 scrollbar-hide">
+<div class="flex space-x-8">
+<button class="text-primary font-bold border-b-2 border-primary pb-2 whitespace-nowrap">Latest News</button>
+<button class="text-secondary font-medium hover:text-on-background transition-colors pb-2 whitespace-nowrap">Luxury Travel</button>
+<button class="text-secondary font-medium hover:text-on-background transition-colors pb-2 whitespace-nowrap">Maintenance</button>
+<button class="text-secondary font-medium hover:text-on-background transition-colors pb-2 whitespace-nowrap">Electric Future</button>
+<button class="text-secondary font-medium hover:text-on-background transition-colors pb-2 whitespace-nowrap">Road Trips</button>
+</div>
+<div class="hidden md:flex items-center text-secondary text-sm font-medium">
+<span>View All Articles</span>
+<span class="material-symbols-outlined ml-2 text-base" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+<!-- Article Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+<!-- Article Card 1: Maintenance -->
+<article class="group cursor-pointer">
+<div class="relative overflow-hidden rounded-xl mb-6 aspect-[4/5] bg-surface-container">
+<img alt="Maintenance" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Close-up of a mechanic's gloved hands working on a pristine, high-performance engine with technical lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOnX4zOck3X77v8ZQmRbr9sanU8iiNqto3TjuSEETfO5Eu_3qWoSPVtivoiPtpgmCJarorW3w_oeoYULv9ib97a1ZEZUda6Rq8_R1mNRz1j0s_GqKC5h_DPjFGSdPU9hwMoNReEaMMFdUCLMxLK4p5PgDIZUW-WPZyJrPuRlkkVPDJbMrWwvh5ygcMMocxHVWbOYp8rb88H-pGJLOwvoCop3CskCpItZdTZGScKGSSETt94xC3C8IhLr3tP0ba_57wgW72gxEttNoB"/>
+<div class="absolute top-4 left-4">
+<span class="bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-[10px] font-bold tracking-wider uppercase text-zinc-900">Maintenance</span>
+</div>
+</div>
+<h3 class="text-2xl font-bold tracking-tight mb-3 group-hover:text-primary transition-colors">Precision Care: Protecting Your Exotic Investment.</h3>
+<p class="text-secondary text-sm leading-relaxed mb-4 line-clamp-2">Five essential rituals every high-performance vehicle owner should perform to maintain showroom integrity.</p>
+<div class="flex items-center text-xs text-zinc-400 font-bold uppercase tracking-widest">
+<span>Oct 12, 2024</span>
+<span class="mx-2">•</span>
+<span>6 min read</span>
+</div>
+</article>
+<!-- Article Card 2: Luxury Travel -->
+<article class="group cursor-pointer">
+<div class="relative overflow-hidden rounded-xl mb-6 aspect-[4/5] bg-surface-container">
+<img alt="Luxury Travel" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Aerial shot of a luxury convertible driving through a scenic coastal highway in Italy during golden hour" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCv3M9niqn2Y4O760QFu6j4Z1fWCuHV5v-tUeNst-LcAGjitrTqSDcppHEe1IWrXVY3s2FKb1iE_4zeFmDxhjDCijaCEx9Os7m5FQSZ1CC27fR78HDgGEmpjkI1x78LGaTG0mLVSFua49S08gB2axckcXxGqyN70yI3w4p3dnKL6Iz8_w-nB5eLrdYkw0E_6VGdYCWxaTW_xF4s24ieHZEJ8-GBdbS6EiDc3NBqG6kUAhNY6JViJzO_qJ17cQB428oBUCuucWZBFdJ6"/>
+<div class="absolute top-4 left-4">
+<span class="bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-[10px] font-bold tracking-wider uppercase text-zinc-900">Travel</span>
+</div>
+</div>
+<h3 class="text-2xl font-bold tracking-tight mb-3 group-hover:text-primary transition-colors">Coastal Echoes: A Week in the Amalfi Coast.</h3>
+<p class="text-secondary text-sm leading-relaxed mb-4 line-clamp-2">Why a classic drop-top is the only way to experience the winding Mediterranean cliffs of Positano.</p>
+<div class="flex items-center text-xs text-zinc-400 font-bold uppercase tracking-widest">
+<span>Oct 08, 2024</span>
+<span class="mx-2">•</span>
+<span>12 min read</span>
+</div>
+</article>
+<!-- Article Card 3: EV Future -->
+<article class="group cursor-pointer">
+<div class="relative overflow-hidden rounded-xl mb-6 aspect-[4/5] bg-surface-container">
+<img alt="EV Future" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Close-up of an electric car charging port with futuristic blue lighting and a high-tech metallic finish" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBS4GZicUU2L_Q56h4KKdAncCcTIVC531u_QAffyPQhQrRiLaefDPS4c-Z3Sn9C3FgYuOe4y0jJNy1XNuhUMWJz0ETgp3yq6r--xvi0YfXBXl2XQKAb7w5zxM_xwCUj7-EqSACWEEvCeTILCwOJf_2g5Q8xilM4qEfg1AFnIUwv0uNr3ihj5SDe0pc1KDty2wL6quNKzwYMHIAN9a7qfpM1opzYiL-BWq6omkzXCqGYZg_wufWca0XmyB8RuIJ7_inhMKmvQ3nzk9b-"/>
+<div class="absolute top-4 left-4">
+<span class="bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-[10px] font-bold tracking-wider uppercase text-zinc-900">EV Evolution</span>
+</div>
+</div>
+<h3 class="text-2xl font-bold tracking-tight mb-3 group-hover:text-primary transition-colors">Beyond the Battery: The Soul of Electric Luxury.</h3>
+<p class="text-secondary text-sm leading-relaxed mb-4 line-clamp-2">How performance brands are redesigning sound and vibration to keep the thrill alive in an electric age.</p>
+<div class="flex items-center text-xs text-zinc-400 font-bold uppercase tracking-widest">
+<span>Oct 05, 2024</span>
+<span class="mx-2">•</span>
+<span>8 min read</span>
+</div>
+</article>
+</div>
+<!-- Secondary Large Editorial: Layered Stacking -->
+<section class="mt-32 p-12 lg:p-20 bg-surface-container-low rounded-3xl relative overflow-hidden">
+<div class="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div>
+<span class="text-primary font-black uppercase tracking-widest text-[10px] mb-4 block">Inside Rentivo</span>
+<h2 class="text-4xl lg:text-5xl font-bold mb-6 tracking-tight leading-tight">Curating the World's Finest Fleet.</h2>
+<p class="text-secondary text-lg mb-8">Go behind the scenes of our acquisition process. Learn how we select, test, and maintain the rarest vehicles in our collection for your next journey.</p>
+<button class="flex items-center space-x-3 text-on-background font-bold group">
+<span class="border-b-2 border-primary pb-1">Watch the Documentary</span>
+<span class="material-symbols-outlined text-primary group-hover:translate-x-2 transition-transform" data-icon="play_circle">play_circle</span>
+</button>
+</div>
+<div class="relative">
+<div class="aspect-square rounded-2xl overflow-hidden editorial-shadow transform rotate-3">
+<img alt="Fleet Selection" class="w-full h-full object-cover" data-alt="Interior of a luxury car showroom with minimalist architecture and perfectly polished supercar reflections" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2elR0jldNdeorUOaWPTeswXBXbOGWkCjjM43xvOAdYyLoe-PScjxBsCi-7_h9zPNJkmVyoMwHziEIqek3_UfhICkOCbiCpfQI3B4hrxoVEKblEy8Hq-H9niWwIpgK0T7xOvYjmjvTwOWeTbLGULoDEJA3mOlvSOwQFfbtS1GzTr749MB5623vQLEcZaIh0RZw3__msvzhf5NHO-q2XySwXW7lcs2eyX_tGWp7Mj8GLcEzW9bUp9twjM9zK0g0OUAGPZIXHhWRG8Z_"/>
+</div>
+<div class="absolute -bottom-8 -left-8 aspect-square w-1/2 rounded-2xl overflow-hidden editorial-shadow transform -rotate-6 border-8 border-white">
+<img alt="Fleet Detail" class="w-full h-full object-cover" data-alt="Close up detail of a high-end sport car's carbon fiber spoiler and red brake calipers" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVZkX3NQmik3epjzOeBX141vVCl0ULseZy9tc4_MeDA_irfQgzA8g1-xP9CKD7y-IDSGZN_Yf5vCvINvXYd_9qoeFhlBXUaPIs-alOHfrBfEPk5uq-NrLUgc2A2n0vbLQxDhjFaYZs5mhz7IV4MchR3AMsTq5q5xVXrr8spGICT9gO022erw5XYEoCKqEHDcho6nubseBvju9S79m64xp2C_RorkxjKSjJw-wNF6czxQ-i1iReDx_oeVrOhAll6SuycKw-fWepKj6d"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Newsletter: Subscription Shell -->
+<section class="mt-32 max-w-4xl mx-auto text-center py-20">
+<div class="bg-white p-12 rounded-3xl editorial-shadow">
+<h2 class="text-3xl font-bold mb-4">Join the Inner Circle</h2>
+<p class="text-secondary mb-10 max-w-md mx-auto">Get exclusive editorial content, first access to new inventory, and luxury travel guides delivered to your inbox.</p>
+<form class="flex flex-col md:flex-row gap-4 max-w-xl mx-auto">
+<input class="flex-grow bg-surface-container-low border-none rounded-xl px-6 py-4 focus:ring-2 focus:ring-primary/20 text-on-background transition-all" placeholder="Your premium email" type="email"/>
+<button class="bg-primary text-on-primary px-10 py-4 rounded-xl font-bold transition-all hover:scale-105 active:scale-95 whitespace-nowrap">Subscribe Now</button>
+</form>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-zinc-100 dark:bg-zinc-900 w-full py-12 px-8">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 max-w-7xl mx-auto font-['Plus_Jakarta_Sans'] text-sm leading-relaxed">
+<div class="space-y-6">
+<div class="text-xl font-black text-zinc-900 dark:text-white">RENTIVO</div>
+<p class="text-zinc-500 dark:text-zinc-400">Redefining the relationship between driver and machine. Premium experiences, anywhere you go.</p>
+</div>
+<div class="flex flex-col space-y-4">
+<p class="font-bold text-zinc-900 dark:text-white uppercase tracking-widest text-[10px]">Ecosystem</p>
+<a class="text-zinc-500 dark:text-zinc-400 hover:text-red-600 transition-colors" href="#">Fleet Guide</a>
+<a class="text-zinc-500 dark:text-zinc-400 hover:text-red-600 transition-colors" href="#">Inventory</a>
+<a class="text-zinc-500 dark:text-zinc-400 hover:text-red-600 transition-colors" href="#">Locations</a>
+</div>
+<div class="flex flex-col space-y-4">
+<p class="font-bold text-zinc-900 dark:text-white uppercase tracking-widest text-[10px]">Support</p>
+<a class="text-zinc-500 dark:text-zinc-400 hover:text-red-600 transition-colors" href="#">Contact Us</a>
+<a class="text-zinc-500 dark:text-zinc-400 hover:text-red-600 transition-colors" href="#">Privacy Policy</a>
+<a class="text-zinc-500 dark:text-zinc-400 hover:text-red-600 transition-colors" href="#">Terms of Service</a>
+</div>
+<div class="flex flex-col space-y-4">
+<p class="font-bold text-zinc-900 dark:text-white uppercase tracking-widest text-[10px]">Follow Us</p>
+<div class="flex space-x-4">
+<a class="w-10 h-10 rounded-full bg-zinc-200 dark:bg-zinc-800 flex items-center justify-center hover:bg-primary hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined text-sm" data-icon="share">share</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-zinc-200 dark:bg-zinc-800 flex items-center justify-center hover:bg-primary hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined text-sm" data-icon="language">language</span>
+</a>
+</div>
+</div>
+</div>
+<div class="bg-zinc-200 dark:bg-zinc-800 h-px w-full my-8 max-w-7xl mx-auto"></div>
+<div class="max-w-7xl mx-auto text-center text-zinc-500 dark:text-zinc-400 text-xs">
+            © 2024 Rentivo Premium Automotive. All rights reserved.
+        </div>
+</footer>
+</body></html>

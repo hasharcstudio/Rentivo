@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Security Settings - Veloce Elite</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-container": "#007fa0",
+                    "primary-container": "#e2241f",
+                    "on-background": "#1a1c1d",
+                    "surface": "#f9f9fb",
+                    "primary-fixed": "#ffdad5",
+                    "secondary": "#5f5e5e",
+                    "surface-container-low": "#f3f3f5",
+                    "surface-bright": "#f9f9fb",
+                    "outline": "#926f6a",
+                    "on-secondary": "#ffffff",
+                    "on-secondary-fixed-variant": "#474646",
+                    "primary": "#bc000a",
+                    "tertiary": "#00647f",
+                    "on-error-container": "#93000a",
+                    "on-primary-fixed-variant": "#930005",
+                    "surface-tint": "#c0000a",
+                    "surface-variant": "#e2e2e4",
+                    "on-tertiary": "#ffffff",
+                    "inverse-on-surface": "#f0f0f2",
+                    "tertiary-fixed": "#bbe9ff",
+                    "tertiary-fixed-dim": "#68d3fc",
+                    "on-primary-container": "#fffbff",
+                    "primary-fixed-dim": "#ffb4aa",
+                    "surface-container-high": "#e8e8ea",
+                    "on-surface": "#1a1c1d",
+                    "on-error": "#ffffff",
+                    "surface-container-lowest": "#ffffff",
+                    "inverse-primary": "#ffb4aa",
+                    "on-tertiary-container": "#fafdff",
+                    "secondary-fixed-dim": "#c8c6c5",
+                    "on-tertiary-fixed": "#001f29",
+                    "error-container": "#ffdad6",
+                    "surface-dim": "#d9dadc",
+                    "surface-container": "#eeeef0",
+                    "surface-container-highest": "#e2e2e4",
+                    "outline-variant": "#e7bdb7",
+                    "inverse-surface": "#2f3132",
+                    "secondary-fixed": "#e5e2e1",
+                    "on-tertiary-fixed-variant": "#004d63",
+                    "on-secondary-fixed": "#1c1b1b",
+                    "on-primary-fixed": "#410001",
+                    "secondary-container": "#e5e2e1",
+                    "on-secondary-container": "#656464",
+                    "on-surface-variant": "#5d3f3b",
+                    "background": "#f9f9fb",
+                    "error": "#ba1a1a",
+                    "on-primary": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Plus Jakarta Sans"],
+                    "body": ["Plus Jakarta Sans"],
+                    "label": ["Plus Jakarta Sans"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background antialiased">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-[#f9f9fb] dark:bg-[#1a1c1d] flex justify-between items-center px-8 py-4 w-full max-w-full">
+<div class="text-2xl font-black italic tracking-tighter text-[#1a1c1d] dark:text-[#f9f9fb]">
+            Veloce Elite
+        </div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-[#5f5e5e] dark:text-[#d9dadc] hover:text-[#bc000a] transition-all duration-300 font-bold" href="#">Fleet</a>
+<a class="text-[#5f5e5e] dark:text-[#d9dadc] hover:text-[#bc000a] transition-all duration-300 font-bold" href="#">Concierge</a>
+<a class="text-[#5f5e5e] dark:text-[#d9dadc] hover:text-[#bc000a] transition-all duration-300 font-bold" href="#">Experience</a>
+</nav>
+<div class="flex items-center gap-6">
+<button class="material-symbols-outlined text-secondary hover:text-primary transition-colors" data-icon="notifications">notifications</button>
+<button class="material-symbols-outlined text-secondary hover:text-primary transition-colors" data-icon="account_circle">account_circle</button>
+</div>
+</header>
+<div class="flex min-h-screen pt-20">
+<!-- SideNavBar -->
+<aside class="h-screen w-64 fixed left-0 top-0 pt-20 bg-[#f3f3f5] dark:bg-[#121212] flex flex-col h-full py-6 pr-4">
+<div class="px-6 mb-8">
+<div class="flex items-center gap-3 mb-2">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center overflow-hidden">
+<img alt="User profile" data-alt="close-up portrait of a professional man in a tailored suit with a confident expression and clean grooming" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPxF6IwPw0hgB3tPDAfph9pm9ZVe59VT3oRC0fydTKLlYLC54ZNqX6ZYzZEM18Js_8o_qwhghGH2_hRa0_GHZQ-cgYvju9rhNc0O4V2ous4ElGQ3yl-ef-denjrhrDbAopr69UUFG61ca47ufA7MrRa34bgKQPiyGRUOxlECvr2EmeozA9L36XFTdyR6CTxabrJ_qUkokV-TeIsNqMC0TL0qBrZozB-sLNHCvbxP2uthiMLR3_NyFiv-RBI1k-8uKuE_2wHmWgF9o4"/>
+</div>
+<div>
+<p class="text-on-background font-bold text-sm">Premium Member</p>
+<p class="text-secondary text-xs">Elite Tier</p>
+</div>
+</div>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 text-[#5f5e5e] dark:text-[#d9dadc] p-3 hover:translate-x-1 transition-transform hover:bg-[#d9dadc] dark:hover:bg-[#1a1c1d]" href="#">
+<span class="material-symbols-outlined" data-icon="calendar_today">calendar_today</span>
+<span class="text-[0.875rem] font-medium">My Bookings</span>
+</a>
+<a class="flex items-center gap-3 text-[#5f5e5e] dark:text-[#d9dadc] p-3 hover:translate-x-1 transition-transform hover:bg-[#d9dadc] dark:hover:bg-[#1a1c1d]" href="#">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+<span class="text-[0.875rem] font-medium">Payment Methods</span>
+</a>
+<a class="flex items-center gap-3 bg-white dark:bg-[#1a1c1d] text-[#bc000a] font-bold p-3 rounded-r-full shadow-sm scale-98 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="security" style="font-variation-settings: 'FILL' 1;">security</span>
+<span class="text-[0.875rem]">Security</span>
+</a>
+<a class="flex items-center gap-3 text-[#5f5e5e] dark:text-[#d9dadc] p-3 hover:translate-x-1 transition-transform hover:bg-[#d9dadc] dark:hover:bg-[#1a1c1d]" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="text-[0.875rem] font-medium">Preferences</span>
+</a>
+</nav>
+<div class="px-6 mt-6">
+<button class="w-full py-3 bg-primary-container text-white rounded-xl font-bold text-sm hover:opacity-90 transition-all scale-102">
+                    Upgrade Membership
+                </button>
+</div>
+<div class="mt-auto border-t border-transparent pt-6">
+<a class="flex items-center gap-3 text-[#5f5e5e] dark:text-[#d9dadc] p-3 hover:translate-x-1 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+<span class="text-[0.875rem] font-medium">Help Center</span>
+</a>
+<a class="flex items-center gap-3 text-[#5f5e5e] dark:text-[#d9dadc] p-3 hover:translate-x-1 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span class="text-[0.875rem] font-medium">Sign Out</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="ml-64 flex-1 p-12 bg-surface">
+<div class="max-w-5xl mx-auto">
+<header class="mb-12">
+<h1 class="text-4xl font-extrabold tracking-tight text-on-background mb-2">Security Hub</h1>
+<p class="text-secondary text-lg">Manage your account protection and active access sessions.</p>
+</header>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+<!-- Password Update Section -->
+<section class="md:col-span-7 bg-surface-container-lowest rounded-xl p-8 shadow-[0_12px_40px_rgba(0,0,0,0.04)]">
+<div class="flex items-center gap-4 mb-8">
+<div class="w-12 h-12 bg-primary-fixed rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" data-icon="lock_reset">lock_reset</span>
+</div>
+<div>
+<h2 class="text-xl font-bold">Update Password</h2>
+<p class="text-secondary text-sm">Last changed 3 months ago</p>
+</div>
+</div>
+<div class="space-y-6">
+<div>
+<label class="block text-sm font-bold mb-2 text-on-background">Current Password</label>
+<input class="w-full bg-surface-container-low border-none rounded-lg p-4 focus:ring-1 focus:ring-primary/20 text-on-background placeholder-secondary/50" placeholder="••••••••••••" type="password"/>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div>
+<label class="block text-sm font-bold mb-2 text-on-background">New Password</label>
+<input class="w-full bg-surface-container-low border-none rounded-lg p-4 focus:ring-1 focus:ring-primary/20 text-on-background placeholder-secondary/50" placeholder="••••••••••••" type="password"/>
+</div>
+<div>
+<label class="block text-sm font-bold mb-2 text-on-background">Confirm Password</label>
+<input class="w-full bg-surface-container-low border-none rounded-lg p-4 focus:ring-1 focus:ring-primary/20 text-on-background placeholder-secondary/50" placeholder="••••••••••••" type="password"/>
+</div>
+</div>
+<div class="pt-4">
+<button class="bg-gradient-to-br from-primary to-primary-container text-white px-8 py-4 rounded-xl font-bold hover:scale-[1.02] transition-transform flex items-center gap-2">
+                                    Update Security Credentials
+                                </button>
+</div>
+</div>
+</section>
+<!-- 2FA Section -->
+<section class="md:col-span-5 bg-surface-container-low rounded-xl p-8 flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-4 mb-6">
+<div class="w-12 h-12 bg-tertiary-container text-white rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="fact_check">fact_check</span>
+</div>
+<h2 class="text-xl font-bold">Two-Factor Auth</h2>
+</div>
+<p class="text-secondary mb-8 leading-relaxed">Add an extra layer of security to your account by requiring more than just a password to log in.</p>
+<div class="flex items-center justify-between p-4 bg-surface-container-lowest rounded-lg mb-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="smartphone">smartphone</span>
+<span class="font-bold text-sm">SMS Authentication</span>
+</div>
+<div class="w-12 h-6 bg-surface-container-high rounded-full relative cursor-pointer">
+<div class="absolute right-1 top-1 w-4 h-4 bg-primary rounded-full"></div>
+</div>
+</div>
+<div class="flex items-center justify-between p-4 bg-surface-container-lowest rounded-lg">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary" data-icon="shield_person">shield_person</span>
+<span class="font-bold text-sm">Authenticator App</span>
+</div>
+<div class="w-12 h-6 bg-surface-container-highest rounded-full relative cursor-pointer">
+<div class="absolute left-1 top-1 w-4 h-4 bg-white rounded-full"></div>
+</div>
+</div>
+</div>
+<button class="mt-8 text-primary font-bold text-sm flex items-center gap-1 hover:underline">
+                            Learn more about 2FA protection
+                            <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</section>
+<!-- Active Sessions Section -->
+<section class="md:col-span-12">
+<div class="bg-surface-container-lowest rounded-xl p-8 shadow-[0_12px_40px_rgba(0,0,0,0.04)]">
+<div class="flex justify-between items-center mb-10">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-secondary-fixed rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary" data-icon="devices">devices</span>
+</div>
+<div>
+<h2 class="text-xl font-bold">Active Login Sessions</h2>
+<p class="text-secondary text-sm">Currently logged in devices and locations</p>
+</div>
+</div>
+<button class="text-primary font-bold hover:bg-primary-fixed px-4 py-2 rounded-lg transition-colors">Log out from all other devices</button>
+</div>
+<div class="space-y-4">
+<!-- Session Item -->
+<div class="flex items-center justify-between p-6 rounded-xl hover:bg-surface-container-low transition-colors group">
+<div class="flex items-center gap-6">
+<div class="p-3 bg-surface-container rounded-lg">
+<span class="material-symbols-outlined text-on-background" data-icon="desktop_windows">desktop_windows</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<h3 class="font-bold">MacBook Pro 16"</h3>
+<span class="bg-primary-fixed text-primary px-2 py-0.5 rounded text-[10px] font-black uppercase tracking-wider">Current</span>
+</div>
+<p class="text-secondary text-sm">San Francisco, USA • Chrome • 192.168.1.1</p>
+</div>
+</div>
+<span class="text-secondary group-hover:text-primary transition-colors cursor-pointer material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</div>
+<div class="h-px bg-surface-container-high mx-6"></div>
+<!-- Session Item -->
+<div class="flex items-center justify-between p-6 rounded-xl hover:bg-surface-container-low transition-colors group">
+<div class="flex items-center gap-6">
+<div class="p-3 bg-surface-container rounded-lg">
+<span class="material-symbols-outlined text-on-background" data-icon="smartphone">smartphone</span>
+</div>
+<div>
+<h3 class="font-bold">iPhone 15 Pro</h3>
+<p class="text-secondary text-sm">London, UK • Veloce Elite App • 102.45.12.8</p>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<span class="text-secondary text-sm">Active 2h ago</span>
+<span class="text-secondary group-hover:text-primary transition-colors cursor-pointer material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</div>
+</div>
+<div class="h-px bg-surface-container-high mx-6"></div>
+<!-- Session Item -->
+<div class="flex items-center justify-between p-6 rounded-xl hover:bg-surface-container-low transition-colors group">
+<div class="flex items-center gap-6">
+<div class="p-3 bg-surface-container rounded-lg">
+<span class="material-symbols-outlined text-on-background" data-icon="tablet_mac">tablet_mac</span>
+</div>
+<div>
+<h3 class="font-bold">iPad Air</h3>
+<p class="text-secondary text-sm">San Francisco, USA • Safari • 192.168.1.5</p>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<span class="text-secondary text-sm">Active 12d ago</span>
+<span class="text-secondary group-hover:text-primary transition-colors cursor-pointer material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Security Audit Banner -->
+<section class="md:col-span-12 relative overflow-hidden bg-on-background text-white rounded-xl p-8 flex items-center justify-between">
+<div class="relative z-10">
+<h3 class="text-2xl font-bold mb-2">Request a full security audit</h3>
+<p class="text-surface-variant text-sm max-w-lg">Get a comprehensive review of your account activities, IP logs, and booking history compiled by our security experts.</p>
+</div>
+<button class="relative z-10 bg-white text-on-background px-6 py-3 rounded-lg font-bold hover:bg-surface-variant transition-colors">
+                            Request Audit Log
+                        </button>
+<!-- Decorative background element -->
+<div class="absolute right-0 top-0 w-1/3 h-full opacity-10 pointer-events-none">
+<div class="w-full h-full bg-gradient-to-l from-primary to-transparent"></div>
+</div>
+</section>
+</div>
+</div>
+</main>
+</div>
+<!-- Mobile Bottom Navigation -->
+<div class="md:hidden fixed bottom-0 left-0 w-full bg-white dark:bg-[#1a1c1d] flex justify-around items-center p-4 shadow-[0_-4px_20px_rgba(0,0,0,0.05)] z-50">
+<button class="flex flex-col items-center gap-1 text-secondary">
+<span class="material-symbols-outlined" data-icon="explore">explore</span>
+<span class="text-[10px] font-bold">Fleet</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-primary">
+<span class="material-symbols-outlined" data-icon="security" style="font-variation-settings: 'FILL' 1;">security</span>
+<span class="text-[10px] font-bold">Security</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-secondary">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+<span class="text-[10px] font-bold">Profile</span>
+</button>
+</div>
+</body></html>

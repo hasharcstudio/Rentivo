@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/20svg" viewBox="0 0 400 400" fill="none">
+  <!-- Outer glowing hexagon -->
+  <path d="M200 40 L340 120 L340 280 L200 360 L60 280 L60 120 Z" stroke="#bc000a" stroke-width="8" stroke-dasharray="10 10" opacity="0.3"/>
+  <path d="M200 60 L320 130 L320 270 L200 340 L80 270 L80 130 Z" stroke="#bc000a" stroke-width="15"/>
+  
+  <!-- Stylized R inside the hexagon -->
+  <path d="M150 140 H220 C250 140 265 155 265 175 C265 195 250 210 220 210 H180 L180 280 H150 Z" fill="#bc000a"/>
+  <!-- Kinetic slash for R's leg -->
+  <path d="M210 210 L270 280 H230 L180 215 Z" fill="#bc000a"/>
+  
+  <!-- Sleek acceleration lines -->
+  <rect x="80" y="160" width="40" height="8" rx="4" fill="#bc000a" opacity="0.5"/>
+  <rect x="100" y="190" width="20" height="8" rx="4" fill="#bc000a" opacity="0.8"/>
+</svg>
