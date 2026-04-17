@@ -5,6 +5,7 @@ import { ThemeProvider } from "@/components/ThemeProvider";
 import { GlobalSplash } from "@/components/GlobalSplash";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import { Providers } from "@/components/Providers";
 
 const jakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -31,19 +32,21 @@ export default function RootLayout({
         />
       </head>
       <body className={`${jakarta.variable} min-h-screen flex flex-col font-sans selection:bg-primary selection:text-white`}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <GlobalSplash />
-          <Navbar />
-          <main className="flex-1 w-full pt-20 flex flex-col">
-            {children}
-          </main>
-          <Footer />
-        </ThemeProvider>
+        <Providers>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <GlobalSplash />
+            <Navbar />
+            <main className="flex-1 w-full pt-20 flex flex-col">
+              {children}
+            </main>
+            <Footer />
+          </ThemeProvider>
+        </Providers>
       </body>
     </html>
   );

@@ -5,14 +5,16 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useTheme } from "next-themes";
-import { Menu, X, Moon, Sun, User } from "lucide-react";
+import { Menu, X, Moon, Sun, User, LogOut } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useSession, signOut } from "next-auth/react";
 
 export function Navbar() {
   const [mounted, setMounted] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const { theme, setTheme } = useTheme();
   const pathname = usePathname();
+  const { data: session, status } = useSession();
 
   useEffect(() => {
     setMounted(true);
@@ -77,20 +79,41 @@ export function Navbar() {
               </button>
             )}
 
-            <Link
-              href="/dashboard/profile"
-              className="flex items-center gap-2 text-on-background font-medium hover:text-primary transition-colors min-h-[44px]"
-            >
-              <User size={20} />
-              Account
-            </Link>
-
-            <Link
-              href="/dashboard/bookings"
-              className="bg-gradient-to-br from-primary to-primary-container text-white px-6 py-2.5 rounded-xl font-bold hover:scale-105 active:scale-95 transition-all shadow-lg shadow-primary/20 min-h-[44px] flex items-center"
-            >
-              My Dashboard
-            </Link>
+            {status === "loading" ? (
+              <div className="w-8 h-8 bg-surface-container rounded-full animate-pulse"></div>
+            ) : session ? (
+              <>
+                <Link
+                  href="/dashboard/profile"
+                  className="flex items-center gap-2 text-on-background font-medium hover:text-primary transition-colors min-h-[44px]"
+                >
+                  <User size={20} />
+                  {session.user?.name || session.user?.email}
+                </Link>
+                <button
+                  onClick={() => signOut()}
+                  className="flex items-center gap-2 text-secondary hover:text-primary transition-colors min-h-[44px]"
+                >
+                  <LogOut size={20} />
+                  Sign Out
+                </button>
+              </>
+            ) : (
+              <>
+                <Link
+                  href="/sign-in"
+                  className="text-on-background font-medium hover:text-primary transition-colors min-h-[44px] flex items-center"
+                >
+                  Sign In
+                </Link>
+                <Link
+                  href="/sign-up"
+                  className="bg-gradient-to-br from-primary to-primary-container text-white px-6 py-2.5 rounded-xl font-bold hover:scale-105 active:scale-95 transition-all shadow-lg shadow-primary/20 min-h-[44px] flex items-center"
+                >
+                  Sign Up
+                </Link>
+              </>
+            )}
           </div>
 
           {/* Mobile Hamburger Toggle */}

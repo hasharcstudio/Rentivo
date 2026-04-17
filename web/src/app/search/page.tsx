@@ -2,21 +2,30 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState, Suspense } from "react";
-import { useSearchParams } from "next/navigation";
-import { 
+import { useEffect, useState, Suspense } from "react";
+import {
   MapPin, Calendar, Repeat, ArrowRight, Settings, Fuel, Users, Zap, Search as SearchIcon
 } from "lucide-react";
 import { cars } from "@/data/cars";
 
 function SearchResultsContent() {
-  const searchParams = useSearchParams();
-  const location = searchParams.get('location') || "";
-  const pickup = searchParams.get('pickup') || "";
-  const returnDate = searchParams.get('return') || "";
+  const [searchState, setSearchState] = useState({ location: "", pickup: "", returnDate: "" });
+  const location = searchState.location;
+  const pickup = searchState.pickup;
+  const returnDate = searchState.returnDate;
   const [isAuthenticated] = useState(() => {
     return typeof window !== "undefined" && sessionStorage.getItem("rentivo_authenticated") === "true";
   });
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const params = new URLSearchParams(window.location.search);
+    setSearchState({
+      location: params.get('location') || "",
+      pickup: params.get('pickup') || "",
+      returnDate: params.get('return') || "",
+    });
+  }, []);
 
   const results = location 
     ? cars.filter(c => c.location.toLowerCase().includes(location.toLowerCase()) || c.name.toLowerCase().includes(location.toLowerCase()))
