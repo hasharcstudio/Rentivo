@@ -5,13 +5,14 @@ import Link from "next/link";
 import Image from "next/image";
 import { Input } from "@/components/Input";
 import { Lock, Mail, User } from "lucide-react";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { registerUser, setAuthenticated } from "@/lib/auth";
 
 export default function SignUpPage() {
   const router = useRouter();
-  const searchParams = useSearchParams();
-  const redirect = searchParams.get("redirect") || "";
+  const redirect = typeof window !== "undefined"
+    ? new URLSearchParams(window.location.search).get("redirect") || ""
+    : "";
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
@@ -26,7 +27,7 @@ export default function SignUpPage() {
 
     const result = await registerUser(email, password, firstName, lastName);
     if (!result.success) {
-      setError(result.message);
+      setError(result.message || "Registration failed. Please try again.");
       setIsLoading(false);
       return;
     }

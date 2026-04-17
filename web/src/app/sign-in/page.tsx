@@ -5,13 +5,14 @@ import Link from "next/link";
 import Image from "next/image";
 import { Input } from "@/components/Input";
 import { Lock, Mail } from "lucide-react";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { authenticateUser, setAuthenticated } from "@/lib/auth";
 
 export default function SignInPage() {
   const router = useRouter();
-  const searchParams = useSearchParams();
-  const redirect = searchParams.get("redirect") || "";
+  const redirect = typeof window !== "undefined"
+    ? new URLSearchParams(window.location.search).get("redirect") || ""
+    : "";
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");

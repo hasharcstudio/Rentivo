@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { Input } from "@/components/Input";
 import { ArrowRight, CreditCard, CheckCircle2 } from "lucide-react";
 import Image from "next/image";
-import { useRouter, usePathname, useSearchParams } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 
 export default function CheckoutPage() {
   const [step, setStep] = useState(1);
@@ -13,14 +13,13 @@ export default function CheckoutPage() {
   });
   const router = useRouter();
   const pathname = usePathname();
-  const searchParams = useSearchParams();
 
   useEffect(() => {
-    if (!checkedAuth) {
-      const returnPath = `${pathname}${searchParams.toString() ? `?${searchParams.toString()}` : ""}`;
+    if (!checkedAuth && typeof window !== "undefined") {
+      const returnPath = `${pathname}${window.location.search || ""}`;
       router.push(`/sign-in?redirect=${encodeURIComponent(returnPath)}`);
     }
-  }, [checkedAuth, router, pathname, searchParams]);
+  }, [checkedAuth, router, pathname]);
 
   const handleNext = () => {
     if (step < 3) setStep(step + 1);
