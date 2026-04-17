@@ -1,20 +1,35 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Input } from "@/components/Input";
-import { ArrowRight, ShieldCheck, CreditCard, User, Info, CheckCircle2 } from "lucide-react";
+import { ArrowRight, CreditCard, CheckCircle2 } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname, useSearchParams } from "next/navigation";
 
 export default function CheckoutPage() {
   const [step, setStep] = useState(1);
+  const [checkedAuth] = useState(() => {
+    return typeof window !== "undefined" && sessionStorage.getItem("rentivo_authenticated") === "true";
+  });
   const router = useRouter();
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+
+  useEffect(() => {
+    if (!checkedAuth) {
+      const returnPath = `${pathname}${searchParams.toString() ? `?${searchParams.toString()}` : ""}`;
+      router.push(`/sign-in?redirect=${encodeURIComponent(returnPath)}`);
+    }
+  }, [checkedAuth, router, pathname, searchParams]);
 
   const handleNext = () => {
     if (step < 3) setStep(step + 1);
     else router.push("/checkout/success");
   };
+
+  if (!checkedAuth) {
+    return null;
+  }
 
   return (
     <div className="min-h-screen bg-surface-container-lowest pt-24 pb-20 px-4 sm:px-6">

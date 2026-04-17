@@ -2,8 +2,8 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { useState, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
-import { Suspense } from "react";
 import { 
   MapPin, Calendar, Repeat, ArrowRight, Settings, Fuel, Users, Zap, Search as SearchIcon
 } from "lucide-react";
@@ -14,6 +14,9 @@ function SearchResultsContent() {
   const location = searchParams.get('location') || "";
   const pickup = searchParams.get('pickup') || "";
   const returnDate = searchParams.get('return') || "";
+  const [isAuthenticated] = useState(() => {
+    return typeof window !== "undefined" && sessionStorage.getItem("rentivo_authenticated") === "true";
+  });
 
   const results = location 
     ? cars.filter(c => c.location.toLowerCase().includes(location.toLowerCase()) || c.name.toLowerCase().includes(location.toLowerCase()))
@@ -106,7 +109,10 @@ function SearchResultsContent() {
                   <span className="text-[10px] font-bold uppercase tracking-widest text-secondary block mb-0.5">Per day</span>
                   <span className="text-2xl font-black text-on-surface">${car.price}</span>
                 </div>
-                <Link href={`/checkout?car=${car.id}`} className="bg-primary text-white py-2 px-6 rounded-xl font-bold hover:scale-105 transition-transform flex items-center gap-2 shadow-sm">
+                <Link
+                  href={isAuthenticated ? `/checkout?car=${car.id}` : `/sign-in?redirect=${encodeURIComponent(`/checkout?car=${car.id}`)}`}
+                  className="bg-primary text-white py-2 px-6 rounded-xl font-bold hover:scale-105 transition-transform flex items-center gap-2 shadow-sm"
+                >
                   Book <ArrowRight size={16} />
                 </Link>
               </div>

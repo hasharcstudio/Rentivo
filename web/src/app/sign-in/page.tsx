@@ -1,13 +1,41 @@
 "use client";
 
+import { FormEvent, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Input } from "@/components/Input";
 import { Lock, Mail } from "lucide-react";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
+import { authenticateUser, setAuthenticated } from "@/lib/auth";
 
 export default function SignInPage() {
   const router = useRouter();
+  const searchParams = useSearchParams();
+  const redirect = searchParams.get("redirect") || "";
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setError("");
+    setIsLoading(true);
+
+    const user = await authenticateUser(email, password);
+    if (!user) {
+      setError("Invalid email or password. Please try again or sign up.");
+      setIsLoading(false);
+      return;
+    }
+
+    setAuthenticated(user.email);
+    router.push(redirect ? redirect : "/dashboard/bookings");
+  };
+
+  const handleSocialClick = () => {
+    window.alert("Social login is not enabled yet. Please sign in with email and password.");
+  };
 
   return (
     <div className="min-h-screen flex w-full bg-background absolute inset-0 z-50 overflow-hidden">
@@ -25,7 +53,7 @@ export default function SignInPage() {
           <p className="text-secondary font-medium mb-10">Access your Kinetic Concierge account.</p>
           
           <div className="flex flex-col sm:flex-row gap-4 mb-8">
-            <button className="flex-1 flex items-center justify-center gap-3 bg-surface border border-outline-variant/30 py-3 rounded-xl font-bold hover:bg-surface-container-low transition-colors">
+            <button type="button" onClick={handleSocialClick} className="flex-1 flex items-center justify-center gap-3 bg-surface border border-outline-variant/30 py-3 rounded-xl font-bold hover:bg-surface-container-low transition-colors">
               <svg className="w-5 h-5" viewBox="0 0 24 24">
                 <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
                 <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.16v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
@@ -34,7 +62,7 @@ export default function SignInPage() {
               </svg>
               Google
             </button>
-            <button className="flex-1 flex items-center justify-center gap-3 bg-on-surface text-background py-3 rounded-xl font-bold hover:opacity-90 transition-opacity">
+            <button type="button" onClick={handleSocialClick} className="flex-1 flex items-center justify-center gap-3 bg-on-surface text-background py-3 rounded-xl font-bold hover:opacity-90 transition-opacity">
               <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
                 <path d="M17.05 20.28c-.98.95-2.05 1.95-3.08 1.95-1.09 0-1.45-.69-2.73-.69-1.28 0-1.63.66-2.69.69-1.06.03-2.27-1.12-3.15-2.39C3.59 17.21 2.2 13.06 4.14 10.22c.98-1.44 2.45-2.34 4.01-2.37 1.18-.03 2.31.81 3.08.81.75 0 2.14-.97 3.53-.84 1.48.06 2.84.62 3.68 1.84-2.95 1.75-2.48 5.75.44 6.94-1.32 3.73-4.04 7.64-1.83 3.68zM12.03 7.25c-.16-2.12 1.6-4.12 3.84-4.25.35 2.25-1.78 4.28-3.84 4.25z"/>
               </svg>
@@ -48,15 +76,19 @@ export default function SignInPage() {
             <div className="flex-grow border-t border-outline-variant/30"></div>
           </div>
           
-          <form className="space-y-6" onSubmit={(e) => {
-            e.preventDefault();
-            router.push('/dashboard/bookings');
-          }}>
+          <form className="space-y-6" onSubmit={handleSubmit}>
+            {error && (
+              <div className="rounded-2xl bg-error-container text-error px-4 py-3 text-sm font-medium">
+                {error}
+              </div>
+            )}
             <Input 
               label="Email Address" 
               type="email" 
               placeholder="name@example.com" 
               Icon={Mail}
+              value={email}
+              onChange={(event) => setEmail(event.target.value)}
               required 
             />
             
@@ -65,6 +97,8 @@ export default function SignInPage() {
               type="password" 
               placeholder="••••••••" 
               Icon={Lock}
+              value={password}
+              onChange={(event) => setPassword(event.target.value)}
               required 
             />
 
@@ -78,8 +112,8 @@ export default function SignInPage() {
               </Link>
             </div>
 
-            <button type="submit" className="w-full bg-gradient-to-br from-primary to-primary-container text-white py-4 rounded-xl font-black text-lg hover:scale-[1.02] active:scale-[0.98] transition-all shadow-xl shadow-primary/20">
-              Sign In
+            <button type="submit" disabled={isLoading} className="w-full bg-gradient-to-br from-primary to-primary-container text-white py-4 rounded-xl font-black text-lg hover:scale-[1.02] active:scale-[0.98] transition-all shadow-xl shadow-primary/20 disabled:opacity-60 disabled:cursor-not-allowed">
+              {isLoading ? "Signing In..." : "Sign In"}
             </button>
           </form>
 

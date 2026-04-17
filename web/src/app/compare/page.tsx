@@ -2,11 +2,16 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Check, X } from "lucide-react";
+import { Check, X } from "lucide-react";
+import { useState } from "react";
 import { cars as allCars } from "@/data/cars";
 
 export default function ComparePage() {
   // Pick two flagship vehicles for the comparison showcase
+  const [isAuthenticated] = useState(() => {
+    return typeof window !== "undefined" && sessionStorage.getItem("rentivo_authenticated") === "true";
+  });
+
   const bugatti = allCars.find(c => c.id === 7)!;
   const rimac = allCars.find(c => c.id === 11)!;
 
@@ -66,7 +71,10 @@ export default function ComparePage() {
                   </div>
                   <h2 className="text-2xl font-black mb-2">{car.name}</h2>
                   <p className="text-primary font-bold text-xl mb-6">{car.price}</p>
-                  <Link href={`/checkout?car=${car.id}`} className="block w-full bg-surface-container hover:bg-gradient-to-r hover:from-primary hover:to-primary-container hover:text-white text-on-surface text-center py-4 rounded-xl font-bold transition-all shadow-sm">
+                  <Link
+                    href={isAuthenticated ? `/checkout?car=${car.id}` : `/sign-in?redirect=${encodeURIComponent(`/checkout?car=${car.id}`)}`}
+                    className="block w-full bg-surface-container hover:bg-gradient-to-r hover:from-primary hover:to-primary-container hover:text-white text-on-surface text-center py-4 rounded-xl font-bold transition-all shadow-sm"
+                  >
                     Book Now
                   </Link>
                 </th>

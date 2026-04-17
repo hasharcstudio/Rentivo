@@ -75,6 +75,7 @@ export default function ProfilePage() {
               type="button"
               onClick={() => {
                 sessionStorage.removeItem("rentivo_has_seen_splash");
+                sessionStorage.removeItem("rentivo_authenticated");
                 router.push('/sign-in');
               }}
               className="flex items-center justify-center gap-2 text-error font-bold hover:bg-error/10 px-6 py-3.5 rounded-xl transition-colors min-h-[48px] w-full sm:w-auto"

@@ -3,29 +3,21 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
-import { useRouter, usePathname } from "next/navigation";
 
 export function GlobalSplash() {
-  const [showSplash, setShowSplash] = useState(true);
-  const router = useRouter();
-  const pathname = usePathname();
+  const [showSplash, setShowSplash] = useState(() => {
+    if (typeof window === "undefined") return true;
+    return !sessionStorage.getItem("rentivo_has_seen_splash");
+  });
 
   useEffect(() => {
-    // Check if user has seen the splash screen in this session
-    const hasSeenSplash = sessionStorage.getItem("rentivo_has_seen_splash");
-    if (hasSeenSplash) {
+    if (!showSplash) return;
+    const timer = setTimeout(() => {
       setShowSplash(false);
-    } else {
-      // Wait for animation to finish then hide and tag as seen
-      const timer = setTimeout(() => {
-        setShowSplash(false);
-        sessionStorage.setItem("rentivo_has_seen_splash", "true");
-        // Force routing to Sign In for all fresh visitors
-        router.push("/sign-in");
-      }, 3500);
-      return () => clearTimeout(timer);
-    }
-  }, [router]);
+      sessionStorage.setItem("rentivo_has_seen_splash", "true");
+    }, 3500);
+    return () => clearTimeout(timer);
+  }, [showSplash]);
 
   if (!showSplash) return null;
 
