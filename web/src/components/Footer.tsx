@@ -39,11 +39,11 @@ export function Footer() {
                 <div className="text-sm font-bold">App Store</div>
               </div>
             </button>
-            <button className="bg-on-surface text-background px-6 py-3 rounded-xl flex items-center gap-3 hover:scale-105 transition-transform min-h-[44px]">
-              <span className="material-symbols-outlined">play_store_installed</span>
-              <div className="text-left">
-                <div className="text-[10px] uppercase font-bold leading-none opacity-60">Get it on</div>
-                <div className="text-sm font-bold">Google Play</div>
+            <button className="bg-on-surface text-background px-5 py-2.5 rounded-xl flex items-center gap-3 hover:scale-105 transition-transform min-h-[44px]">
+              <span className="material-symbols-outlined text-lg">play_circle</span>
+              <div className="text-left min-w-0">
+                <div className="text-[9px] uppercase leading-none opacity-60">Get it on</div>
+                <div className="text-[11px] font-bold truncate">Play Store</div>
               </div>
             </button>
           </div>
