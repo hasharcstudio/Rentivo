@@ -24,6 +24,12 @@ export function Navbar() {
     setTheme(theme === "dark" ? "light" : "dark");
   };
 
+  const handleSignOut = async () => {
+    // Clear splash state so it shows again on next load
+    sessionStorage.removeItem("rentivo_has_seen_splash");
+    await signOut({ callbackUrl: "/" });
+  };
+
   const navLinks = [
     { name: "Home", href: "/" },
     { name: "Inventory", href: "/inventory" },
@@ -91,7 +97,7 @@ export function Navbar() {
                   {session.user?.name || session.user?.email}
                 </Link>
                 <button
-                  onClick={() => signOut()}
+                  onClick={handleSignOut}
                   className="flex items-center gap-2 text-secondary hover:text-primary transition-colors min-h-[44px]"
                 >
                   <LogOut size={20} />

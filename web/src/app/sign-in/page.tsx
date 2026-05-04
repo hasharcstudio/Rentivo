@@ -49,7 +49,7 @@ export default function SignInPage() {
   };
 
   return (
-    <div className="min-h-screen flex w-full bg-background absolute inset-0 z-50 overflow-hidden">
+    <div className="min-h-screen flex w-full bg-background overflow-hidden">
       {/* Left Form Side */}
       <div className="w-full lg:w-1/2 flex flex-col justify-center p-8 sm:p-16 md:p-24 overflow-y-auto max-h-screen">
         <Link href="/" className="flex items-center gap-1 -ml-2 text-2xl font-black text-on-background tracking-tighter mb-16 w-fit">

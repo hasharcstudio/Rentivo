@@ -3,21 +3,35 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
+import { useSession } from "next-auth/react";
 
 export function GlobalSplash() {
-  const [showSplash, setShowSplash] = useState(() => {
-    if (typeof window === "undefined") return true;
-    return !sessionStorage.getItem("rentivo_has_seen_splash");
-  });
+  const [showSplash, setShowSplash] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
+  const { status } = useSession();
 
   useEffect(() => {
-    if (!showSplash) return;
-    const timer = setTimeout(() => {
-      setShowSplash(false);
+    setIsMounted(true);
+    
+    // Only show splash on initial app load, not on subsequent navigations
+    // Skip splash if user is already authenticated
+    if (status === "authenticated") {
       sessionStorage.setItem("rentivo_has_seen_splash", "true");
-    }, 3500);
-    return () => clearTimeout(timer);
-  }, [showSplash]);
+      setShowSplash(false);
+      return;
+    }
+
+    // Check if splash was already shown in this session
+    const hasSeen = sessionStorage.getItem("rentivo_has_seen_splash");
+    if (!hasSeen && status !== "loading") {
+      setShowSplash(true);
+      const timer = setTimeout(() => {
+        setShowSplash(false);
+        sessionStorage.setItem("rentivo_has_seen_splash", "true");
+      }, 3500);
+      return () => clearTimeout(timer);
+    }
+  }, [status, isMounted]);
 
   if (!showSplash) return null;
 
