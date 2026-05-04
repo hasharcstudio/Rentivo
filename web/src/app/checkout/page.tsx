@@ -5,28 +5,38 @@ import { Input } from "@/components/Input";
 import { ArrowRight, CreditCard, CheckCircle2 } from "lucide-react";
 import Image from "next/image";
 import { useRouter, usePathname } from "next/navigation";
+import { useSession } from "next-auth/react";
 
 export default function CheckoutPage() {
   const [step, setStep] = useState(1);
-  const [checkedAuth] = useState(() => {
-    return typeof window !== "undefined" && sessionStorage.getItem("rentivo_authenticated") === "true";
-  });
+  const { status } = useSession();
   const router = useRouter();
   const pathname = usePathname();
 
   useEffect(() => {
-    if (!checkedAuth && typeof window !== "undefined") {
+    if (status === "unauthenticated") {
       const returnPath = `${pathname}${window.location.search || ""}`;
       router.push(`/sign-in?redirect=${encodeURIComponent(returnPath)}`);
     }
-  }, [checkedAuth, router, pathname]);
+  }, [status, router, pathname]);
 
   const handleNext = () => {
     if (step < 3) setStep(step + 1);
     else router.push("/checkout/success");
   };
 
-  if (!checkedAuth) {
+  if (status === "loading") {
+    return (
+      <div className="min-h-screen bg-surface-container-lowest pt-24 pb-20 px-4 sm:px-6 flex items-center justify-center">
+        <div className="text-center">
+          <div className="w-8 h-8 bg-primary rounded-full animate-pulse mx-auto mb-4"></div>
+          <p className="text-secondary">Loading checkout...</p>
+        </div>
+      </div>
+    );
+  }
+
+  if (status === "unauthenticated") {
     return null;
   }
 

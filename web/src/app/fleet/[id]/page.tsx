@@ -3,14 +3,13 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { useSession } from "next-auth/react";
 import { BookingCalendar } from "@/components/BookingCalendar";
 import { Reviews } from "@/components/Reviews";
 import { Zap, ShieldCheck, Music, Wifi, Gauge, CalendarClock } from "lucide-react";
 
 export default function CarDetailPage() {
-  const [isAuthenticated] = useState(() => {
-    return typeof window !== "undefined" && sessionStorage.getItem("rentivo_authenticated") === "true";
-  });
+  const { status } = useSession();
 
   return (
     <main className="pt-8 pb-20 px-4 sm:px-6 md:px-8 max-w-[1600px] mx-auto w-full">
@@ -102,13 +101,19 @@ export default function CarDetailPage() {
                 </div>
               </div>
               
-              <Link 
-                href={isAuthenticated ? "/checkout?car=2" : `/sign-in?redirect=${encodeURIComponent("/checkout?car=2")}`}
-                className="w-full min-h-[56px] mt-4 bg-gradient-to-r from-primary to-primary-container text-white rounded-xl font-black text-lg tracking-tight shadow-lg shadow-primary/20 hover:scale-[1.02] transition-all active:scale-95 flex items-center justify-center gap-2"
-              >
-                Checkout Securely
-                <Zap size={20} className="fill-current" />
-              </Link>
+              {status === "loading" ? (
+                <div className="w-full min-h-[56px] mt-4 bg-surface-container text-on-surface rounded-xl font-black text-lg tracking-tight flex items-center justify-center gap-2 animate-pulse">
+                  Loading...
+                </div>
+              ) : (
+                <Link 
+                  href={`/checkout?car=2`}
+                  className="w-full min-h-[56px] mt-4 bg-gradient-to-r from-primary to-primary-container text-white rounded-xl font-black text-lg tracking-tight shadow-lg shadow-primary/20 hover:scale-[1.02] transition-all active:scale-95 flex items-center justify-center gap-2"
+                >
+                  Checkout Securely
+                  <Zap size={20} className="fill-current" />
+                </Link>
+              )}
             </form>
           </div>
         </div>

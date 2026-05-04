@@ -11,9 +11,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import { cars } from "@/data/cars";
 
 export default function InventoryPage() {
-  const [isAuthenticated] = useState(() => {
-    return typeof window !== "undefined" && sessionStorage.getItem("rentivo_authenticated") === "true";
-  });
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
   
   // Filter States
@@ -263,7 +260,7 @@ export default function InventoryPage() {
                     
                     {/* Book Now Button aligned at the bottom */}
                     <Link
-                      href={isAuthenticated ? `/checkout?car=${car.id}` : `/sign-in?redirect=${encodeURIComponent(`/checkout?car=${car.id}`)}`}
+                      href={`/checkout?car=${car.id}`}
                       className="mt-auto w-full min-h-[48px] bg-surface-container-highest hover:bg-gradient-to-br hover:from-primary hover:to-primary-container text-on-surface hover:text-white font-bold rounded-xl flex items-center justify-center gap-2 transition-all group-hover:shadow-lg group-hover:shadow-primary/20"
                     >
                       Book Now
